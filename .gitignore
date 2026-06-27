@@ -3,3 +3,6 @@ __pycache__/
 *.pyo
 .env
 envios.log
+monitor.log
+data/historico.json
+data/monitor_status.json

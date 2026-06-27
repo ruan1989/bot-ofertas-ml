@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bot Ofertas — Painel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+<div class="max-w-5xl mx-auto p-6">
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-8">
+    <div>
+      <h1 class="text-2xl font-bold">🛍️ Bot Ofertas</h1>
+      <p class="text-sm text-gray-500">Atualizado em {{ gerado_em }}</p>
+    </div>
+    <a href="/api/stats" class="text-xs text-blue-500 hover:underline">JSON API</a>
+  </div>
+
+  <!-- KPIs -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    {% set cards = [
+      ("Total na fila", total, "bg-white"),
+      ("Enviados", enviados, "bg-green-50"),
+      ("Pendentes", pendentes, "bg-yellow-50"),
+      ("Score médio", score_medio ~ "/100", "bg-blue-50"),
+    ] %}
+    {% for label, value, bg in cards %}
+    <div class="rounded-xl border p-4 {{ bg }} shadow-sm text-center">
+      <p class="text-3xl font-bold">{{ value }}</p>
+      <p class="text-xs text-gray-500 mt-1">{{ label }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Monitor status -->
+  {% if monitor %}
+  <div class="bg-white rounded-xl border shadow-sm p-4 mb-8">
+    <h2 class="font-semibold mb-3">Integrações</h2>
+    <div class="flex flex-wrap gap-4">
+      {% for nome, resultado in monitor.items() %}
+        {% if nome != "verificado_em" %}
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm
+          {% if resultado.ok %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
+          {% if resultado.ok %}✅{% else %}❌{% endif %}
+          {{ nome }}
+          {% if resultado.username %} (@{{ resultado.username }}){% endif %}
+          {% if resultado.erro %} — {{ resultado.erro }}{% endif %}
+        </span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <p class="text-xs text-gray-400 mt-2">Última verificação: {{ monitor.verificado_em }}</p>
+  </div>
+  {% endif %}
+
+  <!-- Top ofertas -->
+  <div class="bg-white rounded-xl border shadow-sm p-4">
+    <h2 class="font-semibold mb-4">Top ofertas por score</h2>
+    {% if top_ofertas %}
+    <div class="space-y-3">
+      {% for p in top_ofertas %}
+      <div class="flex items-center gap-3">
+        <div class="w-12 text-center">
+          <span class="text-lg font-bold
+            {% if p.score >= 75 %}text-green-600
+            {% elif p.score >= 50 %}text-yellow-600
+            {% else %}text-red-500{% endif %}">
+            {{ p.score }}
+          </span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium truncate">{{ p.titulo }}</p>
+          <div class="w-full bg-gray-100 rounded h-1.5 mt-1">
+            <div class="h-1.5 rounded
+              {% if p.score >= 75 %}bg-green-500
+              {% elif p.score >= 50 %}bg-yellow-400
+              {% else %}bg-red-400{% endif %}"
+              style="width: {{ p.score }}%">
+            </div>
+          </div>
+        </div>
+        <div class="text-right text-sm shrink-0">
+          {% if p.preco %}
+            <span class="font-semibold">R$ {{ "%.2f"|format(p.preco) }}</span>
+          {% endif %}
+          <span class="ml-2 px-2 py-0.5 rounded text-xs
+            {% if p.status == 'enviado' %}bg-green-100 text-green-700
+            {% elif p.status == 'duplicata' %}bg-gray-100 text-gray-500
+            {% else %}bg-yellow-100 text-yellow-700{% endif %}">
+            {{ p.status or "pendente" }}
+          </span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-gray-400 text-sm">Nenhuma oferta na fila ainda. Use <code>python adicionar_produto.py</code> para adicionar.</p>
+    {% endif %}
+  </div>
+
+  <!-- Rodapé -->
+  <p class="text-center text-xs text-gray-400 mt-8">
+    {{ historico_30d }} envio(s) nos últimos 30 dias · {{ duplicatas }} duplicata(s) bloqueada(s)
+  </p>
+</div>
+
+</body>
+</html>
