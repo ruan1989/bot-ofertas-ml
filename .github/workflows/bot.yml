@@ -1,0 +1,54 @@
+name: Bot Ofertas ML
+
+on:
+  schedule:
+    # Roda a cada hora das 07h às 23h (horário Brasília = UTC-3)
+    - cron: '0 10-02 * * *'   # 07h-23h BRT = 10h-02h UTC
+  workflow_dispatch:           # permite rodar manualmente no GitHub
+
+jobs:
+  rastrear:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Restaurar banco de dados (deduplicação)
+        uses: actions/cache@v4
+        with:
+          path: data/bot_ofertas.db
+          key: sqlite-db-${{ github.run_number }}
+          restore-keys: |
+            sqlite-db-
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Instalar Playwright + Chromium
+        run: python -m playwright install chromium --with-deps
+
+      - name: Criar diretórios necessários
+        run: mkdir -p data
+
+      - name: Rodar o bot
+        env:
+          TOKEN_TELEGRAM: ${{ secrets.TOKEN_TELEGRAM }}
+          CANAL_GERAL: ${{ secrets.CANAL_GERAL }}
+          ML_AFFILIATE_TOOL_ID: ${{ secrets.ML_AFFILIATE_TOOL_ID }}
+          PYTHONIOENCODING: utf-8
+        run: python rastreador.py
+
+      - name: Salvar banco atualizado no cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/bot_ofertas.db
+          key: sqlite-db-${{ github.run_number }}

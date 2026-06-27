@@ -1,9 +1,20 @@
-﻿# Credenciais — nunca subir
+# Credenciais — nunca subir
 .env
 
 # Cache Python
 __pycache__/
 *.py[cod]
+*.pyo
 
-# Dados locais
+# Dados locais (não subir para o GitHub)
 envios.log
+rastreador.log
+data/rastreador_auto.log
+data/ml_profile/
+data/bot_ofertas.db
+data/processos.txt
+data/teste_completo.log
+
+# Arquivos temporários
+*.zip
+afiliabot_v3/

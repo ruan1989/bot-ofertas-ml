@@ -48,15 +48,14 @@ def validar(produto: dict, reputacao: dict) -> tuple[bool, str]:
     if preco_original and preco and (preco_original / preco) > 5:
         return False, f"razão preço suspeita ({preco_original:.0f}/{preco:.0f})"
 
-    # Reputação do vendedor
-    nivel: str = reputacao.get("nivel", "")
-    if nivel in _REPUTACOES_RUINS:
-        return False, f"vendedor com reputação {nivel}"
-
-    # Vendedor sem histórico
-    total_vendas: int = reputacao.get("total_vendas") or 0
-    if total_vendas < 10:
-        return False, f"vendedor com apenas {total_vendas} venda(s) concluída(s)"
+    # Reputação do vendedor (só verifica se dados disponíveis via API)
+    if reputacao:
+        nivel: str = reputacao.get("nivel", "")
+        if nivel in _REPUTACOES_RUINS:
+            return False, f"vendedor com reputação {nivel}"
+        total_vendas: int = reputacao.get("total_vendas") or 0
+        if total_vendas < 10:
+            return False, f"vendedor com apenas {total_vendas} venda(s) concluída(s)"
 
     # Palavras que indicam produto falso/réplica
     for palavra in _PALAVRAS_SUSPEITAS:

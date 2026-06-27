@@ -3,108 +3,301 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bot Ofertas — Painel</title>
+  <title>Bot Ofertas ML — Painel</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="refresh" content="60">
+  <style>
+    .dot-online { background:#22c55e; animation:pulse 2s infinite; }
+    .dot-offline{ background:#ef4444; }
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen">
+<div class="max-w-6xl mx-auto px-4 py-6">
 
-<div class="max-w-5xl mx-auto p-6">
   <!-- Header -->
-  <div class="flex items-center justify-between mb-8">
+  <div class="flex items-center justify-between mb-6">
     <div>
-      <h1 class="text-2xl font-bold">🛍️ Bot Ofertas</h1>
-      <p class="text-sm text-gray-500">Atualizado em {{ gerado_em }}</p>
+      <h1 class="text-2xl font-bold text-indigo-700">🤖 Bot Ofertas ML</h1>
+      <p class="text-xs text-gray-400 mt-0.5">Atualizado em {{ gerado_em }} &bull;
+        <a href="/api/stats" class="text-indigo-400 hover:underline">API</a> &bull;
+        <a href="/api/produtos" class="text-indigo-400 hover:underline">Produtos</a>
+      </p>
     </div>
-    <a href="/api/stats" class="text-xs text-blue-500 hover:underline">JSON API</a>
+    <div class="flex gap-2">
+      <a href="/" class="text-xs text-gray-400 hover:text-gray-600 border rounded px-3 py-1.5">↺ Atualizar</a>
+      <button onclick="forcarExecucao()" id="btn-forcar"
+        class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white rounded px-3 py-1.5 font-medium">
+        ▶ Forçar Execução
+      </button>
+    </div>
   </div>
 
   <!-- KPIs -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-    {% set cards = [
-      ("Total na fila", total, "bg-white"),
-      ("Enviados", enviados, "bg-green-50"),
-      ("Pendentes", pendentes, "bg-yellow-50"),
-      ("Score médio", score_medio ~ "/100", "bg-blue-50"),
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+    {% for label, value, bg, cor, icon in [
+      ("Publicados",    enviados,            "bg-green-50 border-green-200",  "text-green-700",  "📤"),
+      ("Pendentes",     pendentes,           "bg-yellow-50 border-yellow-200","text-yellow-700", "⏳"),
+      ("Score Médio",   score_medio~"/100",  "bg-blue-50 border-blue-200",    "text-blue-700",   "⭐"),
+      ("Taxa Afiliado", taxa_afiliado~"%",   "bg-purple-50 border-purple-200","text-purple-700", "🔗"),
     ] %}
-    {% for label, value, bg in cards %}
     <div class="rounded-xl border p-4 {{ bg }} shadow-sm text-center">
-      <p class="text-3xl font-bold">{{ value }}</p>
-      <p class="text-xs text-gray-500 mt-1">{{ label }}</p>
+      <p class="text-xs text-gray-400 mb-1">{{ icon }} {{ label }}</p>
+      <p class="text-2xl font-bold {{ cor }}">{{ value }}</p>
     </div>
     {% endfor %}
   </div>
 
-  <!-- Monitor status -->
-  {% if monitor %}
-  <div class="bg-white rounded-xl border shadow-sm p-4 mb-8">
-    <h2 class="font-semibold mb-3">Integrações</h2>
-    <div class="flex flex-wrap gap-4">
-      {% for nome, resultado in monitor.items() %}
-        {% if nome != "verificado_em" %}
-        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm
-          {% if resultado.ok %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
-          {% if resultado.ok %}✅{% else %}❌{% endif %}
-          {{ nome }}
-          {% if resultado.username %} (@{{ resultado.username }}){% endif %}
-          {% if resultado.erro %} — {{ resultado.erro }}{% endif %}
+  <!-- Status + Afiliado -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+    <!-- Status do sistema -->
+    <div class="bg-white rounded-xl border shadow-sm p-4">
+      <h2 class="font-semibold text-sm mb-3 text-gray-700">Status do Sistema</h2>
+      <div class="space-y-2 text-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Dashboard</span>
+          <span class="flex items-center gap-1.5 text-green-600 font-medium">
+            <span class="w-2 h-2 rounded-full dot-online inline-block"></span>Online
+          </span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Bot rastreador</span>
+          <span class="flex items-center gap-1.5 font-medium text-gray-400" id="bot-status">
+            <span class="w-2 h-2 rounded-full bg-gray-300 inline-block" id="bot-dot"></span>
+            <span id="bot-label">verificando...</span>
+          </span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Última execução</span>
+          <span class="text-gray-500 text-xs" id="ultima-exec">—</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Erros recentes (2h)</span>
+          <span class="text-gray-500 text-xs font-medium" id="erros-count">—</span>
+        </div>
+      </div>
+      {% if provedores %}
+      <div class="mt-3 pt-3 border-t flex flex-wrap gap-2">
+        {% for nome, ok in provedores.items() %}
+        <span class="text-xs px-2 py-0.5 rounded-full font-medium
+          {% if ok %}bg-green-100 text-green-700{% else %}bg-gray-100 text-gray-500{% endif %}">
+          {{ "✓" if ok else "✗" }} {{ nome }}
         </span>
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
-    <p class="text-xs text-gray-400 mt-2">Última verificação: {{ monitor.verificado_em }}</p>
+
+    <!-- Afiliado -->
+    <div class="bg-white rounded-xl border shadow-sm p-4">
+      <h2 class="font-semibold text-sm mb-3 text-gray-700">Links de Afiliado</h2>
+      <div class="grid grid-cols-2 gap-2 mb-3">
+        {% for val, label, bg, cor in [
+          (afiliado_ok,      "Gerados",  "bg-green-50",  "text-green-600"),
+          (afiliado_falha,   "Com falha","bg-red-50",    "text-red-500"),
+          (afiliado_pendente,"Pendentes","bg-yellow-50", "text-yellow-600"),
+          (taxa_afiliado~"%","Taxa",     "bg-blue-50",   "text-blue-600"),
+        ] %}
+        <div class="text-center p-2 {{ bg }} rounded-lg">
+          <p class="text-lg font-bold {{ cor }}">{{ val }}</p>
+          <p class="text-xs text-gray-500">{{ label }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="w-full bg-gray-100 rounded-full h-2">
+        <div class="h-2 rounded-full {% if taxa_afiliado >= 80 %}bg-green-500{% elif taxa_afiliado >= 50 %}bg-yellow-400{% else %}bg-red-400{% endif %}"
+             style="width:{{ [taxa_afiliado,100]|min }}%"></div>
+      </div>
+      <p class="text-xs text-gray-400 mt-2 text-center">
+        {% if not provedores.get('mercadolivre') %}
+        ⚠️ Execute <code class="bg-gray-100 px-1 rounded">configurar_afiliado.bat</code>
+        {% else %}✓ Sessão ML ativa{% endif %}
+      </p>
+    </div>
+  </div>
+
+  <!-- Últimas execuções -->
+  {% if ultimas_execucoes %}
+  <div class="bg-white rounded-xl border shadow-sm p-4 mb-5">
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="font-semibold text-sm text-gray-700">Últimas Execuções</h2>
+      <a href="/api/execucoes" class="text-xs text-indigo-400 hover:underline">ver todas</a>
+    </div>
+    <table class="w-full text-sm">
+      <thead class="text-xs text-gray-400 border-b">
+        <tr>
+          <th class="pb-2 text-left pr-4">Data/hora</th>
+          <th class="pb-2 text-center px-2">Encontrados</th>
+          <th class="pb-2 text-center px-2">Links OK</th>
+          <th class="pb-2 text-center px-2">Publicados</th>
+          <th class="pb-2 text-center px-2">Erros</th>
+          <th class="pb-2 text-center px-2">Dupl.</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-50">
+        {% for ex in ultimas_execucoes %}
+        <tr class="hover:bg-gray-50">
+          <td class="py-2 pr-4 text-xs text-gray-500">{{ ex.iniciado_em[:16].replace("T"," ") if ex.iniciado_em else "—" }}</td>
+          <td class="py-2 text-center px-2 text-gray-600">{{ ex.produtos_encontrados }}</td>
+          <td class="py-2 text-center px-2 font-medium text-green-600">{{ ex.links_gerados }}</td>
+          <td class="py-2 text-center px-2 font-bold text-indigo-600">{{ ex.publicados }}</td>
+          <td class="py-2 text-center px-2 {% if ex.erros > 0 %}text-red-500 font-medium{% else %}text-gray-300{% endif %}">{{ ex.erros }}</td>
+          <td class="py-2 text-center px-2 text-gray-400">{{ ex.duplicatas }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
   {% endif %}
 
   <!-- Top ofertas -->
-  <div class="bg-white rounded-xl border shadow-sm p-4">
-    <h2 class="font-semibold mb-4">Top ofertas por score</h2>
+  <div class="bg-white rounded-xl border shadow-sm p-4 mb-5">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="font-semibold text-sm text-gray-700">Top Ofertas por Score</h2>
+      <a href="/api/produtos" class="text-xs text-indigo-400 hover:underline">ver todas</a>
+    </div>
     {% if top_ofertas %}
-    <div class="space-y-3">
+    <div class="space-y-2">
       {% for p in top_ofertas %}
-      <div class="flex items-center gap-3">
-        <div class="w-12 text-center">
-          <span class="text-lg font-bold
-            {% if p.score >= 75 %}text-green-600
-            {% elif p.score >= 50 %}text-yellow-600
-            {% else %}text-red-500{% endif %}">
-            {{ p.score }}
-          </span>
-        </div>
+      <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50">
+        {% if p.foto %}
+        <img src="{{ p.foto }}" class="w-10 h-10 rounded object-cover shrink-0 bg-gray-100" alt="">
+        {% else %}
+        <div class="w-10 h-10 rounded bg-gray-100 flex items-center justify-center shrink-0 text-lg">📦</div>
+        {% endif %}
         <div class="flex-1 min-w-0">
-          <p class="text-sm font-medium truncate">{{ p.titulo }}</p>
-          <div class="w-full bg-gray-100 rounded h-1.5 mt-1">
-            <div class="h-1.5 rounded
-              {% if p.score >= 75 %}bg-green-500
-              {% elif p.score >= 50 %}bg-yellow-400
-              {% else %}bg-red-400{% endif %}"
-              style="width: {{ p.score }}%">
+          <div class="flex items-center gap-1.5 mb-1">
+            <p class="text-sm font-medium truncate">{{ p.titulo }}</p>
+            {% if p.affiliate_status == 'ok' %}
+            <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-700 shrink-0">meli.la</span>
+            {% elif p.affiliate_status == 'erro' %}
+            <span class="text-xs px-1.5 py-0.5 rounded bg-red-100 text-red-500 shrink-0">sem link</span>
+            {% endif %}
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex-1 bg-gray-100 rounded h-1.5">
+              <div class="h-1.5 rounded {% if p.score >= 75 %}bg-green-500{% elif p.score >= 50 %}bg-yellow-400{% else %}bg-red-400{% endif %}"
+                   style="width:{{ p.score }}%"></div>
             </div>
+            <span class="text-xs font-medium w-7 text-right {% if p.score >= 75 %}text-green-600{% elif p.score >= 50 %}text-yellow-600{% else %}text-red-400{% endif %}">{{ p.score }}</span>
           </div>
         </div>
-        <div class="text-right text-sm shrink-0">
-          {% if p.preco %}
-            <span class="font-semibold">R$ {{ "%.2f"|format(p.preco) }}</span>
-          {% endif %}
-          <span class="ml-2 px-2 py-0.5 rounded text-xs
-            {% if p.status == 'enviado' %}bg-green-100 text-green-700
-            {% elif p.status == 'duplicata' %}bg-gray-100 text-gray-500
-            {% else %}bg-yellow-100 text-yellow-700{% endif %}">
-            {{ p.status or "pendente" }}
-          </span>
+        <div class="text-right shrink-0 min-w-[70px]">
+          {% if p.preco %}<p class="text-sm font-bold">R$ {{ "%.0f"|format(p.preco) }}</p>{% endif %}
+          {% if p.desconto_pct %}<p class="text-xs text-green-600">-{{ p.desconto_pct|int }}%</p>{% endif %}
+          <span class="text-xs {% if p.status=='enviado' %}text-green-600{% elif p.status=='pendente' %}text-yellow-600{% else %}text-gray-400{% endif %}">{{ p.status or "—" }}</span>
         </div>
       </div>
       {% endfor %}
     </div>
     {% else %}
-    <p class="text-gray-400 text-sm">Nenhuma oferta na fila ainda. Use <code>python adicionar_produto.py</code> para adicionar.</p>
+    <div class="text-center py-8 text-gray-400">
+      <p class="text-4xl mb-2">📭</p>
+      <p class="text-sm">Nenhuma oferta ainda.</p>
+      <p class="text-xs mt-1">Execute <code class="bg-gray-100 px-1 rounded">python rastreador.py</code></p>
+    </div>
     {% endif %}
   </div>
 
-  <!-- Rodapé -->
-  <p class="text-center text-xs text-gray-400 mt-8">
-    {{ historico_30d }} envio(s) nos últimos 30 dias · {{ duplicatas }} duplicata(s) bloqueada(s)
+  <!-- Alertas/erros -->
+  <div class="bg-white rounded-xl border shadow-sm p-4 mb-5">
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="font-semibold text-sm text-gray-700">Últimos Alertas</h2>
+      <a href="/api/erros" class="text-xs text-indigo-400 hover:underline">ver todos</a>
+    </div>
+    <div id="erros-lista" class="text-xs text-gray-400 text-center py-3">Carregando...</div>
+  </div>
+
+  <p class="text-center text-xs text-gray-300">
+    {{ enviados }} publicado(s) · {{ duplicatas }} duplicata(s) bloqueada(s) · auto-atualiza a cada 60s
   </p>
 </div>
 
+<!-- Toast -->
+<div id="toast" class="fixed bottom-4 right-4 hidden bg-gray-800 text-white text-sm px-4 py-2 rounded-lg shadow-lg z-50"></div>
+
+<script>
+function showToast(msg, tipo) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'fixed bottom-4 right-4 text-sm px-4 py-2 rounded-lg shadow-lg z-50 ' +
+    (tipo === 'erro' ? 'bg-red-600' : 'bg-gray-800') + ' text-white';
+  t.classList.remove('hidden');
+  setTimeout(() => t.classList.add('hidden'), 4000);
+}
+
+async function forcarExecucao() {
+  const btn = document.getElementById('btn-forcar');
+  btn.textContent = '⏳ Iniciando...';
+  btn.disabled = true;
+  try {
+    const r = await fetch('/api/forcar-execucao', { method: 'POST' });
+    const d = await r.json();
+    if (d.ok) {
+      showToast('✅ Execução iniciada! PID ' + d.pid);
+      btn.textContent = '✓ Iniciado';
+    } else {
+      showToast('❌ ' + (d.erro || 'Erro desconhecido'), 'erro');
+      btn.textContent = '▶ Forçar Execução';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    showToast('❌ Falha na requisição', 'erro');
+    btn.textContent = '▶ Forçar Execução';
+    btn.disabled = false;
+  }
+}
+
+async function carregarMonitor() {
+  try {
+    const d = await (await fetch('/api/monitor')).json();
+    const dot = document.getElementById('bot-dot');
+    const label = document.getElementById('bot-label');
+    const status = document.getElementById('bot-status');
+    if (d.bot_rodando) {
+      dot.className = 'w-2 h-2 rounded-full dot-online inline-block';
+      label.textContent = 'Rodando';
+      status.className = 'flex items-center gap-1.5 font-medium text-green-600';
+    } else {
+      dot.className = 'w-2 h-2 rounded-full dot-offline inline-block';
+      label.textContent = 'Parado';
+      status.className = 'flex items-center gap-1.5 font-medium text-red-500';
+    }
+    if (d.ultima_execucao) document.getElementById('ultima-exec').textContent = d.ultima_execucao.substring(0,16).replace('T',' ');
+    if (d.erros_recentes !== undefined) {
+      const ec = document.getElementById('erros-count');
+      ec.textContent = d.erros_recentes;
+      ec.className = 'text-xs font-medium ' + (d.erros_recentes > 0 ? 'text-red-500' : 'text-green-600');
+    }
+  } catch(e) {}
+}
+
+async function carregarErros() {
+  try {
+    const erros = await (await fetch('/api/erros')).json();
+    const el = document.getElementById('erros-lista');
+    if (!erros.length || erros.erro) {
+      el.innerHTML = '<span class="text-green-500">✅ Nenhum erro recente</span>';
+      return;
+    }
+    el.className = 'space-y-1 text-xs';
+    el.innerHTML = erros.slice(0,5).map(e =>
+      `<div class="flex items-start gap-2 py-1 border-b border-gray-50 last:border-0">
+        <span class="text-red-400 shrink-0">⚠</span>
+        <div class="flex-1 min-w-0">
+          <span class="font-medium text-gray-600">${e.tipo||'erro'}</span>
+          <span class="text-gray-400 ml-1">${(e.mensagem||'').substring(0,80)}</span>
+        </div>
+        <span class="text-gray-300 shrink-0">${(e.ocorrido_em||'').substring(0,10)}</span>
+      </div>`
+    ).join('');
+  } catch(e) { document.getElementById('erros-lista').textContent = 'Indisponível'; }
+}
+
+carregarMonitor();
+carregarErros();
+setInterval(carregarMonitor, 30000);
+setInterval(carregarErros, 30000);
+</script>
 </body>
 </html>

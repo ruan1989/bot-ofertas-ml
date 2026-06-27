@@ -1,5 +1,6 @@
 python-dotenv
 python-telegram-bot>=20.0
-anthropic
 flask
 requests
+playwright
+anthropic>=0.40.0
