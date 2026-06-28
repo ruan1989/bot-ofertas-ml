@@ -17,18 +17,49 @@ import re
 _AFFILIATE_TOOL_ID = os.getenv("ML_AFFILIATE_TOOL_ID", "47114387")
 
 _FILTROS_CATEGORIA: dict[str, str] = {
-    "celulares":   "https://www.mercadolivre.com.br/ofertas?category=MLB1051",
-    "eletronicos": "https://www.mercadolivre.com.br/ofertas?category=MLB1000",
-    "informatica": "https://www.mercadolivre.com.br/ofertas?category=MLB1648",
-    "casa":        "https://www.mercadolivre.com.br/ofertas?category=MLB1574",
-    "esportes":    "https://www.mercadolivre.com.br/ofertas?category=MLB1276",
-    "moda":        "https://www.mercadolivre.com.br/ofertas?category=MLB1430",
-    "beleza":      "https://www.mercadolivre.com.br/ofertas?category=MLB1246",
-    "automotivo":  "https://www.mercadolivre.com.br/ofertas?category=MLB1747",
-    "games":       "https://www.mercadolivre.com.br/ofertas?category=MLB1144",
-    "brinquedos":  "https://www.mercadolivre.com.br/ofertas?category=MLB1132",
-    "ferramentas": "https://www.mercadolivre.com.br/ofertas?category=MLB1039",
-    "pet":         "https://www.mercadolivre.com.br/ofertas?category=MLB1514",
+    # ── Celulares ───────────────────────────────────────────────────────────
+    "celulares":        "https://www.mercadolivre.com.br/ofertas?category=MLB1051",
+
+    # ── Informática — subcategorias ──────────────────────────────────────────
+    "notebooks":        "https://www.mercadolivre.com.br/ofertas?category=MLB1652",
+    "tablets":          "https://www.mercadolivre.com.br/ofertas?category=MLB1684",
+    "informatica":      "https://www.mercadolivre.com.br/ofertas?category=MLB1648",  # periféricos / geral
+    "monitores":        "https://www.mercadolivre.com.br/ofertas?category=MLB430235",
+    "impressoras":      "https://www.mercadolivre.com.br/ofertas?category=MLB430237",
+    "armazenamento":    "https://www.mercadolivre.com.br/ofertas?category=MLB430233",
+    "redes":            "https://www.mercadolivre.com.br/ofertas?category=MLB430240",
+
+    # ── Eletrônicos ─────────────────────────────────────────────────────────
+    "eletronicos":      "https://www.mercadolivre.com.br/ofertas?category=MLB1000",
+    "tvs":              "https://www.mercadolivre.com.br/ofertas?category=MLB1002",
+    "audio":            "https://www.mercadolivre.com.br/ofertas?category=MLB1003",
+    "cameras":          "https://www.mercadolivre.com.br/ofertas?category=MLB1015",
+
+    # ── Casa e Eletrodomésticos ──────────────────────────────────────────────
+    "casa":             "https://www.mercadolivre.com.br/ofertas?category=MLB1574",
+    "eletrodomesticos": "https://www.mercadolivre.com.br/ofertas?category=MLB1580",
+    "moveis":           "https://www.mercadolivre.com.br/ofertas?category=MLB1499",
+
+    # ── Moda e Beleza ───────────────────────────────────────────────────────
+    "moda":             "https://www.mercadolivre.com.br/ofertas?category=MLB1430",
+    "beleza":           "https://www.mercadolivre.com.br/ofertas?category=MLB1246",
+    "saude":            "https://www.mercadolivre.com.br/ofertas?category=MLB1300",
+
+    # ── Esportes e Lazer ────────────────────────────────────────────────────
+    "esportes":         "https://www.mercadolivre.com.br/ofertas?category=MLB1276",
+    "games":            "https://www.mercadolivre.com.br/ofertas?category=MLB1144",
+    "brinquedos":       "https://www.mercadolivre.com.br/ofertas?category=MLB1132",
+
+    # ── Família ─────────────────────────────────────────────────────────────
+    "bebes":            "https://www.mercadolivre.com.br/ofertas?category=MLB5726",
+    "livros":           "https://www.mercadolivre.com.br/ofertas?category=MLB3025",
+
+    # ── Veículos e Ferramentas ──────────────────────────────────────────────
+    "automotivo":       "https://www.mercadolivre.com.br/ofertas?category=MLB1747",
+    "ferramentas":      "https://www.mercadolivre.com.br/ofertas?category=MLB1039",
+
+    # ── Animais ─────────────────────────────────────────────────────────────
+    "pet":              "https://www.mercadolivre.com.br/ofertas?category=MLB1514",
 }
 
 _UA = (

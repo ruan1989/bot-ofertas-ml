@@ -49,15 +49,31 @@ CANAIS = {"geral": os.getenv("CANAL_GERAL", "")}
 
 # ── Configuração ──────────────────────────────────────────────────────────────
 CATEGORIAS_ATIVAS = [
-    "celulares", "eletronicos", "informatica", "casa",
-    "esportes", "moda", "beleza", "automotivo",
-    "games", "brinquedos", "ferramentas", "pet",
+    # Celulares
+    "celulares",
+    # Informática — subcategorias separadas
+    "notebooks", "tablets", "informatica", "monitores",
+    "armazenamento", "impressoras", "redes",
+    # Eletrônicos
+    "eletronicos", "tvs", "audio", "cameras",
+    # Casa
+    "casa", "eletrodomesticos", "moveis",
+    # Moda e Beleza
+    "moda", "beleza", "saude",
+    # Esportes e Lazer
+    "esportes", "games", "brinquedos",
+    # Família
+    "bebes", "livros",
+    # Veículos
+    "automotivo", "ferramentas",
+    # Pet
+    "pet",
 ]
 DESCONTO_MINIMO   = 20
 SCORE_MINIMO      = 60
-MAX_POR_EXECUCAO  = 3   # máximo de posts por execução (rotaciona categorias)
+MAX_POR_EXECUCAO  = 4   # 4 posts por execução × 18 runs/dia = ~72 posts/dia
 MAX_POR_CATEGORIA = 1   # nunca posta a mesma categoria 2x no mesmo run
-PAUSA_ENTRE_POSTS = 8   # segundos entre posts
+PAUSA_ENTRE_POSTS = 6   # segundos entre posts
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 

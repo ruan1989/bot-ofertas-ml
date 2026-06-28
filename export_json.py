@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Exporta os últimos produtos enviados para docs/data/offers.json.
-Executado automaticamente pelo GitHub Actions após cada run do bot.
+Exporta produtos enviados para docs/data/offers.json.
+Executado pelo GitHub Actions após cada run — garante que o site
+mostre exatamente os mesmos produtos postados no Telegram.
 """
 import json
 import os
@@ -11,6 +12,8 @@ from datetime import datetime, timedelta
 BASE     = os.path.dirname(os.path.abspath(__file__))
 DB_PATH  = os.path.join(BASE, "data", "bot_ofertas.db")
 OUT_PATH = os.path.join(BASE, "docs", "data", "offers.json")
+MAX_PRODUTOS = 300   # máximo de produtos no site
+JANELA_DIAS  = 14    # só mostra produtos dos últimos 14 dias
 
 os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 
@@ -27,24 +30,29 @@ con.row_factory = sqlite3.Row
 cols = {r[1] for r in con.execute("PRAGMA table_info(produtos)").fetchall()}
 cupom_col = ", cupom" if "cupom" in cols else ", NULL as cupom"
 
-SELECT_FIELDS = f"""
+CAMPOS = f"""
     titulo, preco, preco_original, desconto_pct,
     affiliate_link, foto, categoria, score, enviado_em{cupom_col}
 """
 
-# ── Últimos 100 produtos enviados ─────────────────────────────────────────────
+corte = (datetime.now() - timedelta(days=JANELA_DIAS)).isoformat()
+
+# ── Todos os produtos enviados (últimos 14 dias, no máx 300) ─────────────────
 rows = con.execute(f"""
-    SELECT {SELECT_FIELDS}
+    SELECT {CAMPOS}
     FROM produtos
     WHERE status = 'enviado'
+      AND affiliate_link IS NOT NULL
+      AND affiliate_link != ''
+      AND enviado_em >= ?
     ORDER BY enviado_em DESC
-    LIMIT 100
-""").fetchall()
+    LIMIT ?
+""", (corte, MAX_PRODUTOS)).fetchall()
 
 products = []
 for row in rows:
     p = dict(row)
-    p["link"] = p.pop("affiliate_link") or ""
+    p["link"] = p.pop("affiliate_link", "") or ""
     if not p["link"]:
         continue
     products.append({k: v for k, v in p.items() if v is not None})
@@ -52,9 +60,11 @@ for row in rows:
 # ── Produto do Dia — maior score nas últimas 24h ──────────────────────────────
 ontem = (datetime.now() - timedelta(hours=24)).isoformat()
 dia_row = con.execute(f"""
-    SELECT {SELECT_FIELDS}
+    SELECT {CAMPOS}
     FROM produtos
-    WHERE status = 'enviado' AND enviado_em >= ?
+    WHERE status = 'enviado'
+      AND affiliate_link IS NOT NULL
+      AND enviado_em >= ?
     ORDER BY score DESC, desconto_pct DESC
     LIMIT 1
 """, (ontem,)).fetchone()
@@ -62,11 +72,11 @@ dia_row = con.execute(f"""
 produto_do_dia = None
 if dia_row:
     p = dict(dia_row)
-    p["link"] = p.pop("affiliate_link") or ""
+    p["link"] = p.pop("affiliate_link", "") or ""
     if p["link"]:
         produto_do_dia = {k: v for k, v in p.items() if v is not None}
 
-# ── Estatísticas por categoria ────────────────────────────────────────────────
+# ── Stats por categoria ───────────────────────────────────────────────────────
 stat_rows = con.execute("""
     SELECT categoria,
            COUNT(*) as total,
@@ -74,33 +84,38 @@ stat_rows = con.execute("""
            ROUND(AVG(desconto_pct), 0) as desconto_medio,
            MAX(desconto_pct) as maior_desconto
     FROM produtos
-    WHERE status = 'enviado'
+    WHERE status = 'enviado' AND enviado_em >= ?
     GROUP BY categoria
     ORDER BY total DESC
-""").fetchall()
+""", (corte,)).fetchall()
 
-stats_cat = {}
-for r in stat_rows:
-    stats_cat[r["categoria"]] = {
-        "total":          r["total"],
-        "score_medio":    int(r["score_medio"] or 0),
-        "desconto_medio": int(r["desconto_medio"] or 0),
-        "maior_desconto": int(r["maior_desconto"] or 0),
-    }
+stats_cat = {r["categoria"]: {
+    "total":          r["total"],
+    "score_medio":    int(r["score_medio"] or 0),
+    "desconto_medio": int(r["desconto_medio"] or 0),
+    "maior_desconto": int(r["maior_desconto"] or 0),
+} for r in stat_rows}
 
 con.close()
 
-# ── Gravar JSON ───────────────────────────────────────────────────────────────
 data = {
-    "products":      products,
+    "products":       products,
     "produto_do_dia": produto_do_dia,
-    "stats":         stats_cat,
-    "updated_at":    datetime.now().isoformat(),
-    "total":         len(products),
+    "stats":          stats_cat,
+    "updated_at":     datetime.now().isoformat(),
+    "total":          len(products),
 }
 
 with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
-print(f"Exportados {len(products)} produto(s) | "
-      f"Produto do dia: {produto_do_dia['titulo'][:50] if produto_do_dia else 'nenhum'}")
+cat_counts = {}
+for p in products:
+    c = p.get("categoria","?")
+    cat_counts[c] = cat_counts.get(c, 0) + 1
+
+print(f"✅ {len(products)} produto(s) exportados | {len(cat_counts)} categoria(s)")
+for cat, n in sorted(cat_counts.items(), key=lambda x: -x[1]):
+    print(f"   {cat}: {n}")
+if produto_do_dia:
+    print(f"⭐ Produto do dia: {produto_do_dia['titulo'][:60]}")
