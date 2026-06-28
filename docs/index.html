@@ -149,13 +149,7 @@
       <option value="preco_desc">Maior preço</option>
     </select>
     <div class="sep"></div>
-    <button class="chip active" data-cat="todos">Todos</button>
-    <button class="chip" data-cat="celulares">📱 Celulares</button>
-    <button class="chip" data-cat="eletronicos">💻 Eletrônicos</button>
-    <button class="chip" data-cat="informatica">🖥️ Informática</button>
-    <button class="chip" data-cat="casa">🏠 Casa</button>
-    <button class="chip" data-cat="esportes">⚽ Esportes</button>
-    <button class="chip" data-cat="moda">👕 Moda</button>
+    <div id="chips-container" style="display:contents"></div>
   </div>
 </div>
 
@@ -211,6 +205,42 @@
 const REFRESH_MS = 45 * 60 * 1000;
 let all = [], activeFilter = 'todos', searchQ = '', sortBy = 'recente';
 
+const CAT_META = {
+  celulares:  { label: 'Celulares',   icon: '📱' },
+  eletronicos:{ label: 'Eletrônicos', icon: '💻' },
+  informatica:{ label: 'Informática', icon: '🖥️' },
+  casa:       { label: 'Casa',        icon: '🏠' },
+  esportes:   { label: 'Esportes',    icon: '⚽' },
+  moda:       { label: 'Moda',        icon: '👕' },
+};
+
+function buildChips() {
+  const counts = {};
+  all.forEach(p => {
+    const c = (p.categoria || '').toLowerCase();
+    counts[c] = (counts[c] || 0) + 1;
+  });
+  const container = document.getElementById('chips-container');
+  const activeCats = Object.keys(counts).filter(c => counts[c] > 0);
+  const total = all.length;
+
+  let html = `<button class="chip ${activeFilter==='todos'?'active':''}" data-cat="todos">Todos (${total})</button>`;
+  activeCats.forEach(c => {
+    const meta = CAT_META[c] || { label: c, icon: '🛍️' };
+    html += `<button class="chip ${activeFilter===c?'active':''}" data-cat="${c}">${meta.icon} ${meta.label} (${counts[c]})</button>`;
+  });
+  container.innerHTML = html;
+
+  container.querySelectorAll('.chip').forEach(b => {
+    b.addEventListener('click', () => {
+      container.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      activeFilter = b.dataset.cat;
+      render();
+    });
+  });
+}
+
 async function load() {
   try {
     const r = await fetch('data/offers.json?v=' + Date.now());
@@ -234,6 +264,7 @@ async function load() {
       const txt = diff < 2 ? 'agora mesmo' : diff < 60 ? `há ${diff} min` : dt.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
       document.getElementById('update-time').textContent = 'Atualizado ' + txt;
     }
+    buildChips();
     render();
   } catch(e) {
     // Tenta novamente em 10 segundos automaticamente
@@ -349,16 +380,7 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// Filtros
-document.getElementById('filters-inner') // evita erro
-document.querySelectorAll('.chip').forEach(b => {
-  b.addEventListener('click', () => {
-    document.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    activeFilter = b.dataset.cat;
-    render();
-  });
-});
+// Chips são gerados dinamicamente em buildChips() após carregar os dados
 
 // Busca
 let searchTimer;

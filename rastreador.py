@@ -19,6 +19,7 @@ import argparse
 import asyncio
 import logging
 import os
+import random
 import time
 from datetime import datetime
 
@@ -230,8 +231,13 @@ async def rodar_uma_vez() -> None:
 
     publicados: list[int] = [0]
 
+    # Rotaciona categorias para distribuir posts entre nichos ao longo do dia
+    ordem = CATEGORIAS_ATIVAS[:]
+    random.shuffle(ordem)
+    log(f"  Ordem desta rodada: {' → '.join(ordem)}")
+
     async with Bot(token=TOKEN_TELEGRAM) as bot:
-        for nicho in CATEGORIAS_ATIVAS:
+        for nicho in ordem:
             if publicados[0] >= MAX_POR_EXECUCAO:
                 break
             await processar_categoria(bot, nicho, publicados, exec_id, contadores)
