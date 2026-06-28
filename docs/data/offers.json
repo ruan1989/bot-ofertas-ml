@@ -1,6 +1,66 @@
 {
   "products": [
     {
+      "titulo": "Máquina De Acabamento Corta Cabelo Profissional Kemei 2299 P Preto 127/220v",
+      "preco": 79.12,
+      "preco_original": 139.0,
+      "desconto_pct": 43.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_921106-MLB111066859744_052026-AB.webp",
+      "categoria": "bebes",
+      "score": 72,
+      "enviado_em": "2026-06-28T23:48:22.778543",
+      "link": "https://www.mercadolivre.com.br/maquina-de-acabamento-corta-cabelo-profissional-kemei-2299-p/up/MLBU3555982525?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 79.12,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Escova Secadora Philco Pes19sg 3 Acessórios 1300w Cor Prata 127/220v",
+      "preco": 168.99,
+      "preco_original": 278.0,
+      "desconto_pct": 39.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_660992-MLA84542455560_052025-AB.webp",
+      "categoria": "bebes",
+      "score": 73,
+      "enviado_em": "2026-06-28T23:48:16.129027",
+      "link": "https://www.mercadolivre.com.br/escova-secadora-philco-pes19sg-3-acessorios-1300w-cor-prata/p/MLB25327723?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 168.99,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Cooktop 4 Bocas Atlas Agile Up Mesa Vidro Mega Chama Bivolt Preto",
+      "preco": 317.81,
+      "preco_original": 483.0,
+      "desconto_pct": 34.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_662369-MLA99422748970_112025-AB.webp",
+      "categoria": "bebes",
+      "score": 70,
+      "enviado_em": "2026-06-28T23:48:09.471885",
+      "link": "https://www.mercadolivre.com.br/cooktop-4-bocas-atlas-agile-up-mesa-vidro-mega-chama-bivolt/p/MLB46671029?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 317.81,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Aspirador De Pó Vertical Electrolux 1.100w Cabo De 5m Portátil De Mão 2 Em 1 Potente Com Capacidade 1,2l Filtro Hepa Preto 127v",
+      "preco": 128.09,
+      "preco_original": 219.0,
+      "desconto_pct": 41.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_828339-MLA113316490513_062026-AB.webp",
+      "categoria": "bebes",
+      "score": 73,
+      "enviado_em": "2026-06-28T23:48:02.834617",
+      "link": "https://www.mercadolivre.com.br/aspirador-de-po-vertical-electrolux-1100w-cabo-de-5m-portatil-de-mo-2-em-1-potente-com-capacidade-12l-filtro-hepa-preto/p/MLB18781058?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 128.09,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Fralda Geriátrica Plenitud Protect Plus P/m E G/xg 32un",
       "preco": 114.0,
       "preco_original": 167.0,
@@ -3082,6 +3142,12 @@
       "desconto_medio": 49,
       "maior_desconto": 75
     },
+    "bebes": {
+      "total": 8,
+      "score_medio": 75,
+      "desconto_medio": 38,
+      "maior_desconto": 53
+    },
     "livros": {
       "total": 4,
       "score_medio": 75,
@@ -3105,14 +3171,8 @@
       "score_medio": 89,
       "desconto_medio": 47,
       "maior_desconto": 57
-    },
-    "bebes": {
-      "total": 4,
-      "score_medio": 78,
-      "desconto_medio": 38,
-      "maior_desconto": 53
     }
   },
-  "updated_at": "2026-06-28T23:00:15.069827",
-  "total": 230
+  "updated_at": "2026-06-28T23:48:30.027469",
+  "total": 234
 }
