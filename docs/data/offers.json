@@ -1,6 +1,66 @@
 {
   "products": [
     {
+      "titulo": "Perfume Lattafa Asad 100ml Eau De Parfum Original Árabe Original Com Nota Fiscal E Selo Original Lataffa",
+      "preco": 156.0,
+      "preco_original": 289.0,
+      "desconto_pct": 46.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_687418-MLB81527468562_012025-AB.webp",
+      "categoria": "beleza",
+      "score": 90,
+      "enviado_em": "2026-06-28T19:46:41.096686",
+      "link": "https://www.mercadolivre.com.br/perfume-lattafa-asad-100ml-eau-de-parfum-original-arabe-original-com-nota-fiscal-e-selo-original-lataffa/up/MLBU2927448939?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 156.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Principia Kit Completo Para Pele Sensível Com Fps 60",
+      "preco": 74.53,
+      "preco_original": 137.0,
+      "desconto_pct": 45.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_761257-MLA108807654621_032026-AB.webp",
+      "categoria": "beleza",
+      "score": 87,
+      "enviado_em": "2026-06-28T19:46:34.638917",
+      "link": "https://www.mercadolivre.com.br/principia-kit-completo-para-pele-sensivel-com-fps-60/p/MLB53618239?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 74.53,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Alfaparf Semi Di Lino Sublime Cristalli Líquidi 50ml",
+      "preco": 81.9,
+      "preco_original": 194.0,
+      "desconto_pct": 57.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_756530-MLB113359493841_062026-AB.webp",
+      "categoria": "beleza",
+      "score": 89,
+      "enviado_em": "2026-06-28T19:46:28.176685",
+      "link": "https://www.mercadolivre.com.br/alfaparf-semi-di-lino-sublime-cristalli-liquidi-50ml/up/MLBU4117766432?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 81.9,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Máscara Capilar Invigo Color Brilliance 500ml Wella Professionals",
+      "preco": 157.31,
+      "preco_original": 259.0,
+      "desconto_pct": 39.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_942273-MLA99818418091_112025-AB.webp",
+      "categoria": "beleza",
+      "score": 88,
+      "enviado_em": "2026-06-28T19:46:21.714968",
+      "link": "https://www.mercadolivre.com.br/mascara-capilar-invigo-color-brilliance-500ml-wella-professionals/p/MLB19703901?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 157.31,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Kit 3 Shorts 2 Em 1 Duplo Bolso Para Academia Treino Corrida",
       "preco": 73.54,
       "preco_original": 102.0,
@@ -2774,8 +2834,14 @@
       "score_medio": 77,
       "desconto_medio": 49,
       "maior_desconto": 75
+    },
+    "beleza": {
+      "total": 4,
+      "score_medio": 89,
+      "desconto_medio": 47,
+      "maior_desconto": 57
     }
   },
-  "updated_at": "2026-06-28T16:14:13.041351",
-  "total": 210
+  "updated_at": "2026-06-28T19:46:47.578410",
+  "total": 214
 }
