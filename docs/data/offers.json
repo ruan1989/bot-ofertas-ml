@@ -1,6 +1,17 @@
 {
   "products": [
     {
+      "titulo": "Smartphone Motorola Moto G15 - 256gb 12gb (4gb Ram+8gb Ram Boost) E Camera 50mp Com Ai E Night Vision Bateria De 5200 Mah Tela Fhd+ 6.7 Com Superbrilho Nfc - Grafite",
+      "preco": 890.1,
+      "preco_original": 1599.0,
+      "desconto_pct": 44.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_650904-MLA100002714503_112025-AB.webp",
+      "categoria": "celulares",
+      "score": 90,
+      "enviado_em": "2026-06-28T17:00:01.765152",
+      "link": "https://www.mercadolivre.com.br/smartphone-motorola-moto-g15-256gb-12gb-4gb-ram8gb-ram-boost-e-camera-50mp-com-ai-e-night-vision-bateria-de-5200-mah-tela-fhd-67-com-superbrilho-nfc-grafite/p/MLB44665473?matt_tool=47114387&matt_source=bot_telegram"
+    },
+    {
       "titulo": "Xiaomi Note 14 Pro Plus 12 Gb De Ram 256 Gb 5g 200 Mpx 4k Dimm Preto",
       "preco": 2059.0,
       "preco_original": 2559.0,
@@ -144,6 +155,6 @@
       "link": "https://www.mercadolivre.com.br/celular-samsung-galaxy-a17-5g-com-ia-128gb-4gb-ram-cm-de-50mp-tela-de-67-nfc-ip54-preto/p/MLB55027309?matt_tool=47114387&matt_source=bot_telegram"
     }
   ],
-  "updated_at": "2026-06-28T16:37:29.743068",
-  "total": 13
+  "updated_at": "2026-06-28T17:00:12.333445",
+  "total": 14
 }
