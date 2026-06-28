@@ -236,7 +236,14 @@ async function load() {
     }
     render();
   } catch(e) {
-    document.getElementById('grid').innerHTML = `<div class="state"><div class="state-icon">😕</div><h2>Erro ao carregar ofertas</h2><p>Recarregue a página em instantes.</p></div>`;
+    // Tenta novamente em 10 segundos automaticamente
+    document.getElementById('grid').innerHTML = `
+      <div class="state">
+        <div class="state-icon">🔄</div>
+        <h2>Carregando ofertas...</h2>
+        <p>Conectando ao servidor — tente <a href="javascript:location.reload()" style="color:var(--accent)">recarregar a página</a>.</p>
+      </div>`;
+    setTimeout(load, 10000);
   }
 }
 
