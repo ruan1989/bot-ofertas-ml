@@ -1,6 +1,17 @@
 {
   "products": [
     {
+      "titulo": "Smartphone Motorola Moto G35 5g - 128gb 12gb (4gb Ram+8gb Ram Boost) E Camera 50mp Com Ai Nfc Tela 6.7  Com Superbrilho - Verde - Vegan Leather",
+      "preco": 848.79,
+      "preco_original": 1327.0,
+      "desconto_pct": 36.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_983786-MLA99479656582_112025-AB.webp",
+      "categoria": "celulares",
+      "score": 85,
+      "enviado_em": "2026-06-28T17:45:52.161480",
+      "link": "https://www.mercadolivre.com.br/smartphone-motorola-moto-g35-5g-128gb-12gb-4gb-ram8gb-ram-boost-e-camera-50mp-com-ai-nfc-tela-67-com-superbrilho-verde-vegan-leather/p/MLB41541670?matt_tool=47114387&matt_source=bot_telegram"
+    },
+    {
       "titulo": "Smartphone Motorola Moto G15 - 256gb 12gb (4gb Ram+8gb Ram Boost) E Camera 50mp Com Ai E Night Vision Bateria De 5200 Mah Tela Fhd+ 6.7 Com Superbrilho Nfc - Grafite",
       "preco": 890.1,
       "preco_original": 1599.0,
@@ -155,6 +166,6 @@
       "link": "https://www.mercadolivre.com.br/celular-samsung-galaxy-a17-5g-com-ia-128gb-4gb-ram-cm-de-50mp-tela-de-67-nfc-ip54-preto/p/MLB55027309?matt_tool=47114387&matt_source=bot_telegram"
     }
   ],
-  "updated_at": "2026-06-28T17:00:12.333445",
-  "total": 14
+  "updated_at": "2026-06-28T17:46:02.965762",
+  "total": 15
 }
