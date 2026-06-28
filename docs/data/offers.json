@@ -1,6 +1,17 @@
 {
   "products": [
     {
+      "titulo": "Fone De Ouvido Esportivo Sem Fio Tws Com Carregador Portátil",
+      "preco": 55.87,
+      "preco_original": 79.0,
+      "desconto_pct": 29.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_863004-MLB97029966270_112025-AB-fone-de-ouvido-esportivo-sem-fio-tws-com-carregador-portatil.webp",
+      "categoria": "celulares",
+      "score": 59,
+      "enviado_em": "2026-06-28T14:15:46.509564",
+      "link": "https://produto.mercadolivre.com.br/MLB-5577293734-fone-de-ouvido-esportivo-sem-fio-tws-com-carregador-portatil-_JM?matt_tool=47114387&matt_source=bot_telegram"
+    },
+    {
       "titulo": "Samsung Galaxy A06 5g Dual Sim 128gb Preto",
       "preco": 638.91,
       "preco_original": 989.0,
@@ -89,6 +100,6 @@
       "link": "https://www.mercadolivre.com.br/celular-samsung-galaxy-a17-5g-com-ia-128gb-4gb-ram-cm-de-50mp-tela-de-67-nfc-ip54-preto/p/MLB55027309?matt_tool=47114387&matt_source=bot_telegram"
     }
   ],
-  "updated_at": "2026-06-28T12:57:45.156304",
-  "total": 8
+  "updated_at": "2026-06-28T14:15:56.957722",
+  "total": 9
 }
