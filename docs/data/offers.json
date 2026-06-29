@@ -1,6 +1,66 @@
 {
   "products": [
     {
+      "titulo": "Ar Split Electrolux Color Adapt Wi-fi 12k Inverter R-32 220v Branca 220v",
+      "preco": 1659.0,
+      "preco_original": 2229.0,
+      "desconto_pct": 25.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_990641-MLB107807523236_032026-AB.webp",
+      "categoria": "saude",
+      "score": 75,
+      "enviado_em": "2026-06-29T22:17:29.399026",
+      "link": "https://www.mercadolivre.com.br/ar-split-electrolux-color-adapt-wifi-12k-inverter-r32-220v/up/MLBU3843920278?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 1659.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Kit 2 Cornetas Vuvuzela Grande Torcida Copa 2026 Brasil Amarelo",
+      "preco": 21.18,
+      "preco_original": 39.0,
+      "desconto_pct": 47.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_683051-MLB110946714080_052026-AB.webp",
+      "categoria": "saude",
+      "score": 60,
+      "enviado_em": "2026-06-29T22:17:22.734368",
+      "link": "https://www.mercadolivre.com.br/kit-2-cornetas-vuvuzela-grande-torcida-copa-2026-brasil/up/MLBU3853703587?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "media",
+      "menor_preco_30d": 21.18,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Parafusadeira Furadeira De Impacto A Bateria 21v 3/8 Bivolt 1400 Rpm Com Acessórios E Maleta Tb-21pzw The Black Tools Amarelo 127/220v 60 Hz",
+      "preco": 128.9,
+      "preco_original": 259.0,
+      "desconto_pct": 50.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_660718-MLA99503122958_112025-AB.webp",
+      "categoria": "saude",
+      "score": 75,
+      "enviado_em": "2026-06-29T22:17:16.184263",
+      "link": "https://www.mercadolivre.com.br/parafusadeira-furadeira-de-impacto-a-bateria-21v-38-bivolt-1400-rpm-com-acessorios-e-maleta-tb-21pzw-the-black-tools/p/MLB60012839?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 128.9,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Travesseiro Cervical Nasa - Coluna Relax - Carvão Ativado Cor Branco E Cinza",
+      "preco": 181.99,
+      "preco_original": 259.0,
+      "desconto_pct": 29.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_717878-MLA95711097224_102025-AB.webp",
+      "categoria": "saude",
+      "score": 62,
+      "enviado_em": "2026-06-29T22:17:09.570342",
+      "link": "https://www.mercadolivre.com.br/travesseiro-cervical-nasa-coluna-relax-carvo-ativado-cor-branco-e-cinza/p/MLB29553039?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "media",
+      "menor_preco_30d": 181.99,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Cadeira Escritório Presidente Ergonômica Nr17 Marqs Home Arcanis Preta Com Apoio Lombar E Encosto Mesh Premium Preto Malha",
       "preco": 409.84,
       "preco_original": 799.0,
@@ -2343,6 +2403,8 @@
       "enviado_em": "2026-06-27T18:36:59.111732",
       "link": "https://www.mercadolivre.com.br/colcho-emma-original-casal-tecnologia-alem-cor-brancocinza/p/MLB18724648?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
+      "menor_preco_30d": 2135.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -3448,6 +3510,8 @@
       "enviado_em": "2026-06-27T10:00:54.035194",
       "link": "https://www.mercadolivre.com.br/samsung-galaxy-a06-5g-dual-sim-128gb-preto/p/MLB48946861?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 638.82,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -3487,6 +3551,8 @@
       "enviado_em": "2026-06-27T10:00:21.331259",
       "link": "https://www.mercadolivre.com.br/celular-samsung-galaxy-a07-256gb-8gb-cmera-50mp-verde/p/MLB54963045?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
+      "menor_preco_30d": 799.11,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -3563,6 +3629,12 @@
       "desconto_medio": 38,
       "maior_desconto": 53
     },
+    "saude": {
+      "total": 4,
+      "score_medio": 68,
+      "desconto_medio": 38,
+      "maior_desconto": 50
+    },
     "notebooks": {
       "total": 4,
       "score_medio": 84,
@@ -3612,6 +3684,6 @@
       "maior_desconto": 43
     }
   },
-  "updated_at": "2026-06-29T21:02:58.013102",
-  "total": 258
+  "updated_at": "2026-06-29T22:20:22.580171",
+  "total": 262
 }
