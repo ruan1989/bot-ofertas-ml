@@ -34,14 +34,15 @@ from affiliates.registry import get_provider, health_report
 from integrations.ml_browser import buscar_ofertas_browser_async
 from integrations.telegram_bot import publicar, publicar_alerta_cupom
 from integrations.social_poster import publicar_todas_redes, resumo_redes
+from integrations.whatsapp_sender import enviar_para_grupo, wa_ativo
 
 try:
-    from core.ai_rewriter import reescrever_titulo, reescrever_descricao
+    from core.ai_content import gerar_conteudo, ia_ativa
     _AI_OK = True
 except ImportError:
     _AI_OK = False
-    def reescrever_titulo(p): return None  # noqa: E731
-    def reescrever_descricao(p): return None  # noqa: E731
+    def gerar_conteudo(p): return {"titulo_telegram": None, "descricao_telegram": None, "mensagem_whatsapp": None, "ia_usada": False}  # noqa: E731
+    def ia_ativa(): return False  # noqa: E731
 
 load_dotenv()
 
@@ -204,23 +205,32 @@ async def processar_categoria(
         except Exception:
             pass
 
-        # ── 5. Reescrita com IA (opcional) ───────────────────────────────────
-        titulo_ia = None
+        # ── 5. Geração de conteúdo com IA ────────────────────────────────────
+        conteudo_ia = {"titulo_telegram": None, "descricao_telegram": None,
+                       "mensagem_whatsapp": None, "ia_usada": False}
         if _AI_OK:
             try:
-                titulo_ia = reescrever_titulo(item)
-                if titulo_ia:
-                    log(f"     🤖 Título IA: {titulo_ia[:55]}")
-            except Exception:
-                pass
+                conteudo_ia = gerar_conteudo(item)
+                if conteudo_ia.get("ia_usada"):
+                    log(f"     🤖 IA: {conteudo_ia['titulo_telegram'][:55]}")
+                else:
+                    log("     ℹ️  IA indisponível — usando conteúdo padrão")
+            except Exception as _e_ia:
+                log(f"     ⚠️  IA: {_e_ia}")
 
-        # ── 6. Publicar ───────────────────────────────────────────────────────
+        titulo_ia = conteudo_ia.get("titulo_telegram")
+        descricao_ia = conteudo_ia.get("descricao_telegram")
+        texto_wa = conteudo_ia.get("mensagem_whatsapp")
+
+        # ── 6. Publicar Telegram + WhatsApp simultaneamente ───────────────────
         tem_cupom = bool(item.get("cupom"))
         if tem_cupom:
-            log(f"     \U0001f3f7️  Cupom detectado: {item['cupom']} — enviando ALERTA CUPOM")
+            log(f"     🏷️  Cupom detectado: {item['cupom']} — enviando ALERTA CUPOM")
             sucesso = await publicar_alerta_cupom(bot, item, CANAIS)
         else:
-            sucesso = await publicar(bot, item, CANAIS, titulo_reescrito=titulo_ia)
+            sucesso = await publicar(bot, item, CANAIS,
+                                     titulo_reescrito=titulo_ia,
+                                     descricao_reescrita=descricao_ia)
         if sucesso:
             item["status"] = "enviado"
             item["adicionado_em"] = datetime.now().isoformat()
@@ -230,11 +240,20 @@ async def processar_categoria(
             publicados[0] += 1
             contadores["publicados"] += 1
             log(f"  ✅ Publicado! ({publicados[0]}/{MAX_POR_EXECUCAO})")
-            # Publicar nas demais redes sociais (WhatsApp, Instagram, Twitter…)
+
+            # WhatsApp simultâneo (local com pywhatkit ou Evolution API)
+            if wa_ativo():
+                try:
+                    wa_ok = await enviar_para_grupo(item, mensagem_override=texto_wa)
+                    log(f"     💚 WhatsApp: {'enviado' if wa_ok else 'falhou (sem servidor headless)'}")
+                except Exception as _e_wa:
+                    log(f"     ⚠️  WhatsApp: {_e_wa}")
+
+            # Demais redes (Instagram, Twitter…)
             try:
                 redes = await publicar_todas_redes(item)
                 if redes:
-                    log(f"     🌐 Redes sociais: {resumo_redes(redes)}")
+                    log(f"     🌐 Redes: {resumo_redes(redes)}")
             except Exception as _e_social:
                 log(f"     ⚠️  Social: {_e_social}")
             await asyncio.sleep(PAUSA_ENTRE_POSTS)

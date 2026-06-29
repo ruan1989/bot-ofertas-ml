@@ -30,6 +30,13 @@ from core.validador import validar
 from integrations.amazon_scraper import buscar_cupons_amazon_async, amazon_ativo
 from integrations.telegram_bot import publicar_alerta_cupom
 from integrations.social_poster import publicar_todas_redes, resumo_redes
+from integrations.whatsapp_sender import enviar_para_grupo, wa_ativo
+
+try:
+    from core.ai_content import gerar_conteudo, ia_ativa
+except ImportError:
+    def gerar_conteudo(p): return {"titulo_telegram": None, "descricao_telegram": None, "mensagem_whatsapp": None, "ia_usada": False}  # noqa: E731
+    def ia_ativa(): return False  # noqa: E731
 
 load_dotenv()
 
@@ -119,6 +126,15 @@ async def rodar_uma_vez() -> None:
             cupom_info = f" [cupom: {item['cupom']}]" if item.get("cupom") else ""
             log(f"  ✅ {item['titulo'][:50]} | {item.get('desconto_pct', 0):.0f}% OFF{cupom_info}")
 
+            # Gera conteúdo IA para WhatsApp
+            conteudo_ia = {}
+            try:
+                conteudo_ia = gerar_conteudo(item)
+                if conteudo_ia.get("ia_usada"):
+                    log(f"     🤖 IA: {conteudo_ia.get('titulo_telegram','')[:50]}")
+            except Exception:
+                pass
+
             sucesso = await publicar_alerta_cupom(bot, item, CANAIS)
             if sucesso:
                 item["status"] = "enviado"
@@ -128,10 +144,19 @@ async def rodar_uma_vez() -> None:
                 db.marcar_enviado(produto_id)
                 publicados += 1
                 log(f"  📤 Publicado! ({publicados}/{MAX_POR_EXECUCAO})")
+
+                # WhatsApp simultâneo
+                if wa_ativo():
+                    try:
+                        wa_ok = await enviar_para_grupo(item, mensagem_override=conteudo_ia.get("mensagem_whatsapp"))
+                        log(f"     💚 WhatsApp: {'enviado' if wa_ok else 'falhou'}")
+                    except Exception as _e_wa:
+                        log(f"     ⚠️  WhatsApp: {_e_wa}")
+
                 try:
                     redes = await publicar_todas_redes(item)
                     if redes:
-                        log(f"     🌐 Redes sociais: {resumo_redes(redes)}")
+                        log(f"     🌐 Redes: {resumo_redes(redes)}")
                 except Exception as _e:
                     log(f"     ⚠️  Social: {_e}")
                 await asyncio.sleep(PAUSA_ENTRE_POSTS)

@@ -56,6 +56,7 @@ jobs:
           CANAL_GERAL: ${{ secrets.CANAL_GERAL }}
           ML_AFFILIATE_TOOL_ID: ${{ secrets.ML_AFFILIATE_TOOL_ID }}
           WHATSAPP_GROUP_ID: ${{ secrets.WHATSAPP_GROUP_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONIOENCODING: utf-8
         run: python rastreador.py
 
@@ -65,6 +66,7 @@ jobs:
           CANAL_GERAL: ${{ secrets.CANAL_GERAL }}
           AMAZON_AFFILIATE_TAG: ${{ secrets.AMAZON_AFFILIATE_TAG }}
           WHATSAPP_GROUP_ID: ${{ secrets.WHATSAPP_GROUP_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONIOENCODING: utf-8
         run: |
           if [ -n "$AMAZON_AFFILIATE_TAG" ]; then

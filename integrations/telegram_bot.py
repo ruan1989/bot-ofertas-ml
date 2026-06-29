@@ -215,14 +215,12 @@ async def publicar(
     produto: dict,
     canais: dict,
     titulo_reescrito: str | None = None,
+    descricao_reescrita: str | None = None,
 ) -> bool:
-    """Publica uma oferta no canal Telegram correspondente.
-
-    A assinatura desta função é estável — não altere sem atualizar todos os callers.
-    """
+    """Publica uma oferta no canal Telegram correspondente."""
     canal_nome = produto.get("canal") or "geral"
     chat_id = canais.get(canal_nome) or next(iter(canais.values()))
-    mensagem = _montar_mensagem(produto, titulo_reescrito)
+    mensagem = _montar_mensagem(produto, titulo_reescrito, descricao_reescrita)
     teclado = _montar_teclado(produto)
 
     try:

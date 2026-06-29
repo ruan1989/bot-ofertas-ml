@@ -88,16 +88,16 @@ def share_url(produto: dict) -> str:
     return f"https://wa.me/?text={urllib.parse.quote(texto)}"
 
 
-async def enviar_para_grupo(produto: dict) -> bool:
+async def enviar_para_grupo(produto: dict, mensagem_override: str | None = None) -> bool:
     """Tenta enviar para o grupo WhatsApp configurado.
 
-    Tenta Evolution API webhook primeiro (headless),
-    cai para pywhatkit como fallback (requer WhatsApp Web aberto).
+    Usa mensagem_override se fornecida (conteúdo gerado por IA), caso contrário
+    monta a mensagem padrão. Tenta Evolution API primeiro, cai para pywhatkit.
     """
     if not _ATIVO:
         return False
 
-    mensagem = montar_mensagem_wa(produto)
+    mensagem = mensagem_override or montar_mensagem_wa(produto)
 
     # ── Tentativa 1: Evolution API (headless, funciona em server) ─────────────
     if _WEBHOOK_URL and _WA_API_KEY:
