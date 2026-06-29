@@ -1,6 +1,67 @@
 {
   "products": [
     {
+      "titulo": "Dako Magister Style 5 Bocas Magi-2170 Gás/elétrica Preto 127/220v",
+      "preco": 1669.0,
+      "preco_original": 2979.0,
+      "desconto_pct": 43.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_972752-MLA92393532348_092025-AB.webp",
+      "categoria": "eletrodomesticos",
+      "score": 90,
+      "enviado_em": "2026-06-29T19:18:16.040295",
+      "link": "https://www.mercadolivre.com.br/fogo-5-bocas-dako-magister-style-com-frente-espelhada-mesa-de-vidro-e-tripla-chama-bivolt/p/MLB18636583?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 1669.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Cooktop De Indução Itatiaia Master 4q 220v - Preto",
+      "preco": 1039.0,
+      "preco_original": 1427.0,
+      "desconto_pct": 27.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_975067-MLA112250309002_062026-AB.webp",
+      "categoria": "eletrodomesticos",
+      "score": 72,
+      "enviado_em": "2026-06-29T19:18:09.225202",
+      "link": "https://www.mercadolivre.com.br/cooktop-de-induco-itatiaia-master-4q-220v-preto/p/MLB43253853?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 1039.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Monitor Gamer Aoc 21.5'' Full Hd Gaming 120hz 1ms 22b30hm23 Cor Preto 127/220v",
+      "preco": 394.68,
+      "preco_original": 569.0,
+      "desconto_pct": 30.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_621055-MLA91966913733_092025-AB.webp",
+      "categoria": "informatica",
+      "score": 66,
+      "enviado_em": "2026-06-29T19:18:00.001011",
+      "link": "https://www.mercadolivre.com.br/monitor-gamer-aoc-215-full-hd-gaming-120hz-1ms-22b30hm23-cor-preto/p/MLB50200257?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 394.68,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Tablet Vaio Tl10 4gb Ram 128gb Octa-core, Tela 10.4 2k, 4g Wifi Dual Band, Câmera 8mp + Selfie 5mp, 7000mah, Android 16, Com Teclado Magnético De Conexão Inteligente  Preto",
+      "preco": 1179.0,
+      "preco_original": 2212.0,
+      "desconto_pct": 46.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_911625-MLA111714671966_062026-AB.webp",
+      "categoria": "informatica",
+      "score": 90,
+      "enviado_em": "2026-06-29T19:17:53.218233",
+      "cupom": "Cupom R$100 OFF",
+      "link": "https://www.mercadolivre.com.br/tablet-vaio-tl10-4gb-ram-128gb-octa-core-tela-104-2k-4g-wifi-dual-band-cmera-8mp-selfie-5mp-7000mah-android-16-com-teclado-magnetico-de-conexo-inteligente-preto/p/MLB67468569?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 1179.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Notebook Acer Gamer Nitro V15 Ryzen 7 7735hs 16gb Rtx4050 1tb Ssd Linux Tela 165hz Full Hd 15.6 Anv15-41-r8zp Preto",
       "preco": 6303.0,
       "preco_original": 12499.0,
@@ -668,6 +729,8 @@
       "enviado_em": "2026-06-28T15:18:13.995823",
       "link": "https://www.mercadolivre.com.br/roteador-mercusys-mr80x-v4-ax3000-dual-band-wifi6/p/MLB47097785?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "media",
+      "menor_preco_30d": 168.96,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -915,6 +978,8 @@
       "enviado_em": "2026-06-28T11:13:08.965605",
       "link": "https://www.mercadolivre.com.br/monitor-lg-gamer-24--24ms500b-ips-fhd-100hz-antireflexo-pr/up/MLBU3013726314?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 533.64,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -1370,6 +1435,8 @@
       "enviado_em": "2026-06-28T04:04:04.434130",
       "link": "https://www.mercadolivre.com.br/positivo-vision-tab10-t3010-4gb-ram-128gb-ssd-com-capa-teclado-octa-core-5-13mp-bateria-6000mah-tela-101-hd-wifi-ac-e-4g-full-lamination-preto/p/MLB31541424?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
+      "menor_preco_30d": 1072.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2234,6 +2301,8 @@
       "enviado_em": "2026-06-27T18:36:32.824956",
       "link": "https://www.mercadolivre.com.br/placa-de-video-msi-geforce-rtx-5060-shadow-2x-oc-8gb-gddr7-128-bit/p/MLB51032833?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 2374.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2247,6 +2316,8 @@
       "enviado_em": "2026-06-27T18:36:21.775674",
       "link": "https://www.mercadolivre.com.br/impressora-multifuncional-hp-deskjet-ink-advantage-2975-colorida-1-usb-20-de-alta-velocidade-wi-fi-de-banda-dupla-100-a-240-vca-aj4y4aak4/p/MLB62998911?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 419.91,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2520,6 +2591,8 @@
       "enviado_em": "2026-06-27T17:23:26.384929",
       "link": "https://www.mercadolivre.com.br/impressora-multifuncional-cor-epson-ecotank-l3250/p/MLB26986602?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "media",
+      "menor_preco_30d": 1047.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2533,6 +2606,8 @@
       "enviado_em": "2026-06-27T17:23:15.155810",
       "link": "https://www.mercadolivre.com.br/kit-de-internet-via-satelite-starlink-mini-branco/p/MLB40656539?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
+      "menor_preco_30d": 799.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2559,6 +2634,8 @@
       "enviado_em": "2026-06-27T17:22:52.738781",
       "link": "https://www.mercadolivre.com.br/impressora-multifuncional-hp-smart-tank-584-preta/p/MLB34801962?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
+      "menor_preco_30d": 764.1,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2587,6 +2664,8 @@
       "enviado_em": "2026-06-27T17:17:34.576823",
       "link": "https://www.mercadolivre.com.br/impressora-multifuncional-epson-ecotank-l3250-127220v-wifi/up/MLBU1356868481?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "media",
+      "menor_preco_30d": 1047.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2613,6 +2692,8 @@
       "enviado_em": "2026-06-27T17:17:11.424297",
       "link": "https://www.mercadolivre.com.br/impressora-multifuncional-cor-epson-ecotank-l3250/p/MLB34229008?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 1047.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2665,6 +2746,8 @@
       "enviado_em": "2026-06-27T16:35:11.357598",
       "link": "https://www.mercadolivre.com.br/monitor-gamer-lg-ultragear-24-180hz-1ms-full-hd-ips-bivolt/up/MLBU2879852417?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
+      "menor_preco_30d": 740.05,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2678,6 +2761,8 @@
       "enviado_em": "2026-06-27T16:35:00.042329",
       "link": "https://www.mercadolivre.com.br/bateria-samsung-carregador-portatil-3x-usb-c-20000mah-super-rapida-45w/p/MLB38736097?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 223.2,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2691,6 +2776,8 @@
       "enviado_em": "2026-06-27T16:34:41.603950",
       "link": "https://www.mercadolivre.com.br/tp-link-deco-x503-pack-roteador-mesh-wifi6-ax3000-cobre-ate-600m/p/MLB52106020?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 948.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2704,6 +2791,8 @@
       "enviado_em": "2026-06-27T16:34:36.821693",
       "link": "https://www.mercadolivre.com.br/monitor-gamer-lg-22mp410-tela-va-de-215-fhd-1920x1080-75hz-5ms-gtg-hdmi-freesync/p/MLB19812882?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
+      "menor_preco_30d": 399.99,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -2834,6 +2923,8 @@
       "enviado_em": "2026-06-27T14:07:49.206608",
       "link": "https://www.mercadolivre.com.br/projetor-android-11-hy320-4k-bluetooth-smart-cinema-em-casa-cor-preto/p/MLB49782891?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
+      "menor_preco_30d": 206.0,
+      "menor_periodo": false,
       "verificada": true
     },
     {
@@ -3375,7 +3466,7 @@
       "maior_desconto": 65
     },
     "informatica": {
-      "total": 44,
+      "total": 46,
       "score_medio": 75,
       "desconto_medio": 35,
       "maior_desconto": 74
@@ -3439,8 +3530,14 @@
       "score_medio": 89,
       "desconto_medio": 47,
       "maior_desconto": 57
+    },
+    "eletrodomesticos": {
+      "total": 2,
+      "score_medio": 81,
+      "desconto_medio": 35,
+      "maior_desconto": 43
     }
   },
-  "updated_at": "2026-06-29T17:17:36.427472",
-  "total": 250
+  "updated_at": "2026-06-29T19:20:39.925363",
+  "total": 254
 }
