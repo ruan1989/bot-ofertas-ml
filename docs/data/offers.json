@@ -1,6 +1,69 @@
 {
   "products": [
     {
+      "titulo": "Kit 6 Pares Meias Puma Cano Médio Alto Atoalhada Original",
+      "preco": 62.03,
+      "preco_original": 249.0,
+      "desconto_pct": 75.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_617361-MLB54128842596_032023-AB-kit-6-pares-meias-puma-cano-medio-alto-atoalhada-original.webp",
+      "categoria": "moda",
+      "score": 69,
+      "enviado_em": "2026-06-29T14:06:40.061595",
+      "cupom": "Cupom 10% OFF",
+      "link": "https://produto.mercadolivre.com.br/MLB-3239976866-kit-6-pares-meias-puma-cano-medio-alto-atoalhada-original-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 62.03,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Kit 9 Pares Meias Invisível Puma Sapatilha Soquete Original",
+      "preco": 58.1,
+      "preco_original": 199.0,
+      "desconto_pct": 70.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_803229-MLB111671227944_062026-AB-kit-9-pares-meias-invisivel-puma-sapatilha-soquete-original.webp",
+      "categoria": "moda",
+      "score": 75,
+      "enviado_em": "2026-06-29T14:06:33.318988",
+      "link": "https://produto.mercadolivre.com.br/MLB-3946533949-kit-9-pares-meias-invisivel-puma-sapatilha-soquete-original-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 58.1,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Jaqueta Masculina Puffer Bobojaco Nylon Frio Inverno Luxo",
+      "preco": 80.99,
+      "preco_original": 139.0,
+      "desconto_pct": 42.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_798904-MLB106758143336_022026-AB-jaqueta-masculina-puffer-bobojaco-nylon-frio-inverno-luxo.webp",
+      "categoria": "moda",
+      "score": 84,
+      "enviado_em": "2026-06-29T14:06:26.699236",
+      "cupom": "Cupom 10% OFF",
+      "link": "https://produto.mercadolivre.com.br/MLB-6225077892-jaqueta-masculina-puffer-bobojaco-nylon-frio-inverno-luxo-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 80.99,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Kit 4-calças Jeans Ideal Trabalho Pesado Reforçada Elastano",
+      "preco": 162.63,
+      "preco_original": 225.0,
+      "desconto_pct": 28.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_604924-MLB96292389413_102025-AB-kit-4-calcas-jeans-ideal-trabalho-pesado-reforcada-elastano.webp",
+      "categoria": "moda",
+      "score": 71,
+      "enviado_em": "2026-06-29T14:06:19.970478",
+      "cupom": "Cupom 10% OFF",
+      "link": "https://produto.mercadolivre.com.br/MLB-4273592191-kit-4-calcas-jeans-ideal-trabalho-pesado-reforcada-elastano-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 162.63,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Refletor Rgb Controlado Remotamente Com Um Tripé De 156 Cm Preto Rgb",
       "preco": 225.57,
       "preco_original": 598.0,
@@ -3220,16 +3283,18 @@
     }
   ],
   "produto_do_dia": {
-    "titulo": "Luminária Iluminação Led Hexagonal Colmeia Células 14 Branco 127/220v Branco",
-    "preco": 785.53,
-    "preco_original": 1799.0,
-    "desconto_pct": 56.0,
-    "foto": "https://http2.mlstatic.com/D_Q_NP_2X_948496-MLB109943425365_042026-AB.webp",
-    "categoria": "casa",
+    "titulo": "Patinete Elétrico Triciclo Infantil Drift 350w 36v Bluetooth Vermelho",
+    "preco": 803.6,
+    "preco_original": 1400.0,
+    "desconto_pct": 42.0,
+    "foto": "https://http2.mlstatic.com/D_Q_NP_2X_945658-MLB111844025107_052026-AB.webp",
+    "categoria": "brinquedos",
     "score": 95,
-    "enviado_em": "2026-06-28T12:14:53.074395",
-    "link": "https://www.mercadolivre.com.br/luminaria-iluminacao-led-hexagonal-colmeia-celulas-14-branco/up/MLBU3706130160?matt_tool=47114387&matt_source=bot_telegram",
+    "enviado_em": "2026-06-28T22:14:10.652400",
+    "link": "https://www.mercadolivre.com.br/patinete-eletrico-triciclo-infantil-drift-350w-36v-bluetooth/up/MLBU3940010119?matt_tool=47114387&matt_source=bot_telegram",
     "classe": "excelente",
+    "menor_preco_30d": 803.6,
+    "menor_periodo": false,
     "verificada": true
   },
   "stats": {
@@ -3275,6 +3340,12 @@
       "desconto_medio": 38,
       "maior_desconto": 53
     },
+    "moda": {
+      "total": 4,
+      "score_medio": 75,
+      "desconto_medio": 54,
+      "maior_desconto": 75
+    },
     "games": {
       "total": 4,
       "score_medio": 73,
@@ -3300,6 +3371,6 @@
       "maior_desconto": 57
     }
   },
-  "updated_at": "2026-06-29T06:33:09.003023",
-  "total": 242
+  "updated_at": "2026-06-29T14:09:05.727115",
+  "total": 246
 }
