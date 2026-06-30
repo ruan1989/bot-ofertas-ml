@@ -1,6 +1,66 @@
 {
   "products": [
     {
+      "titulo": "Ar Condicionado LG Ai Smart Inverter Voice 9000 Btus Frio Branco 220v",
+      "preco": 1709.0,
+      "preco_original": 2479.0,
+      "desconto_pct": 31.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_880344-MLA99423241978_112025-AB.webp",
+      "categoria": "bebes",
+      "score": 81,
+      "enviado_em": "2026-06-30T17:08:29.793624",
+      "link": "https://www.mercadolivre.com.br/ar-condicionado-lg-ai-smart-inverter-voice-9000-btus-frio-branco/p/MLB57314352?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 1709.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Fogão A Gás 5 Bocas Itatiaia Star Preto Com Forno E Tampa De Vidro 127/220v",
+      "preco": 919.0,
+      "preco_original": 1831.0,
+      "desconto_pct": 49.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_917070-MLA100054773093_122025-AB.webp",
+      "categoria": "bebes",
+      "score": 90,
+      "enviado_em": "2026-06-30T17:08:23.196827",
+      "link": "https://www.mercadolivre.com.br/fogo-a-gas-5-bocas-itatiaia-star-preto-com-forno-e-tampa-de-vidro/p/MLB18476754?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 919.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Extratora De Sujeira Portátil Wap Spot Cleaner W3 Borrifa Esfrega E Extrai 1450w De Potência E Bico De Autolimpeza Cinza/roxo 127v",
+      "preco": 465.5,
+      "preco_original": 948.0,
+      "desconto_pct": 50.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_945436-MLA100025553119_122025-AB.webp",
+      "categoria": "bebes",
+      "score": 89,
+      "enviado_em": "2026-06-30T17:08:16.546667",
+      "link": "https://www.mercadolivre.com.br/extratora-de-sujeira-portatil-wap-spot-cleaner-w3-borrifa-esfrega-e-extrai-1450w-de-potncia-e-bico-de-autolimpeza/p/MLB26797988?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 465.5,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Aquecedor De Água Elétrico Lorenzetti Versátil 3 Temperaturas Cor Branco 220v 5500w Gn",
+      "preco": 255.76,
+      "preco_original": 500.0,
+      "desconto_pct": 48.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_881915-MLA100668638384_122025-AB.webp",
+      "categoria": "bebes",
+      "score": 79,
+      "enviado_em": "2026-06-30T17:08:09.964224",
+      "link": "https://www.mercadolivre.com.br/aquecedor-de-agua-eletrico-lorenzetti-versatil-3-temperaturas-cor-branco-220v-5500w/p/MLB17449992?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 255.76,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Estabilizador Celular Gimbal Com Tripé 3 Eixos Suport Câmera",
       "preco": 390.09,
       "preco_original": 599.0,
@@ -798,7 +858,7 @@
       "link": "https://www.mercadolivre.com.br/maquina-de-acabamento-corta-cabelo-profissional-kemei-2299-p/up/MLBU3555982525?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
       "menor_preco_30d": 79.12,
-      "menor_periodo": false,
+      "menor_periodo": true,
       "verificada": true
     },
     {
@@ -2173,6 +2233,12 @@
       "desconto_medio": 39,
       "maior_desconto": 71
     },
+    "bebes": {
+      "total": 12,
+      "score_medio": 78,
+      "desconto_medio": 40,
+      "maior_desconto": 53
+    },
     "livros": {
       "total": 8,
       "score_medio": 75,
@@ -2202,12 +2268,6 @@
       "score_medio": 85,
       "desconto_medio": 44,
       "maior_desconto": 57
-    },
-    "bebes": {
-      "total": 8,
-      "score_medio": 75,
-      "desconto_medio": 38,
-      "maior_desconto": 53
     },
     "eletronicos": {
       "total": 6,
@@ -2264,6 +2324,6 @@
       "maior_desconto": 42
     }
   },
-  "updated_at": "2026-06-30T14:48:55.247974",
-  "total": 151
+  "updated_at": "2026-06-30T17:09:25.499354",
+  "total": 155
 }
