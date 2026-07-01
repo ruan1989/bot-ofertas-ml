@@ -1,6 +1,67 @@
 {
   "products": [
     {
+      "titulo": "Mochila Dos Homens Com Faixa Impermeável Para Expansão Preto Liso",
+      "preco": 89.9,
+      "preco_original": 297.0,
+      "desconto_pct": 69.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_741399-MLB112035982759_052026-AB.webp",
+      "categoria": "moda",
+      "score": 78,
+      "enviado_em": "2026-07-01T02:36:56.172152",
+      "link": "https://www.mercadolivre.com.br/mochila-dos-homens-com-faixa-impermeavel-para-expansao/up/MLBU3454994034?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 89.9,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Tênis Masculino Casual Aramis Daily Slip Confortável Moderno",
+      "preco": 141.09,
+      "preco_original": 339.0,
+      "desconto_pct": 58.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_839947-MLB107523923436_032026-AB-tnis-masculino-casual-aramis-daily-slip-confortavel-moderno.webp",
+      "categoria": "moda",
+      "score": 89,
+      "enviado_em": "2026-07-01T02:36:49.441081",
+      "link": "https://produto.mercadolivre.com.br/MLB-4359093019-tnis-masculino-casual-aramis-daily-slip-confortavel-moderno-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 141.09,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Mochila Viagem Executiva Grande Notebook Masculina Feminina",
+      "preco": 113.98,
+      "preco_original": 249.0,
+      "desconto_pct": 54.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_880773-MLB99691301191_112025-AB-mochila-viagem-executiva-grande-notebook-masculina-feminina.webp",
+      "categoria": "moda",
+      "score": 87,
+      "enviado_em": "2026-07-01T02:36:42.713845",
+      "cupom": "Cupom 5% OFF",
+      "link": "https://produto.mercadolivre.com.br/MLB-4330911507-mochila-viagem-executiva-grande-notebook-masculina-feminina-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 113.98,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Conjunto De Moletom Polo Calça + Blusa De Frio Kit Masculino",
+      "preco": 96.9,
+      "preco_original": 162.0,
+      "desconto_pct": 40.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_693725-MLB109033265143_032026-AB-conjunto-de-moletom-polo-calca-blusa-de-frio-kit-masculino.webp",
+      "categoria": "moda",
+      "score": 84,
+      "enviado_em": "2026-07-01T02:36:35.293170",
+      "link": "https://produto.mercadolivre.com.br/MLB-3212257110-conjunto-de-moletom-polo-calca-blusa-de-frio-kit-masculino-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 96.9,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Smartphone Motorola Moto G06 - 128gb 12gb (4gb Ram + 8gb Ram Boost) E Camera 50mp Com Ai Bateria De 5200 Mah Tela 6.9 - Azul Marinho",
       "preco": 685.42,
       "preco_original": 999.0,
@@ -1109,6 +1170,12 @@
       "desconto_medio": 50,
       "maior_desconto": 75
     },
+    "moda": {
+      "total": 8,
+      "score_medio": 80,
+      "desconto_medio": 55,
+      "maior_desconto": 75
+    },
     "ferramentas": {
       "total": 8,
       "score_medio": 72,
@@ -1151,12 +1218,6 @@
       "desconto_medio": 50,
       "maior_desconto": 60
     },
-    "moda": {
-      "total": 4,
-      "score_medio": 75,
-      "desconto_medio": 54,
-      "maior_desconto": 75
-    },
     "livros": {
       "total": 4,
       "score_medio": 75,
@@ -1188,6 +1249,6 @@
       "maior_desconto": 46
     }
   },
-  "updated_at": "2026-07-01T00:10:06.753081",
-  "total": 72
+  "updated_at": "2026-07-01T02:38:23.157643",
+  "total": 76
 }
