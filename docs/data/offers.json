@@ -1,6 +1,67 @@
 {
   "products": [
     {
+      "titulo": "Cadeira Auto Bebê Jovikids Angela 360° Isofix 0 A 36kg Preto E Cinza Conforto Premium",
+      "preco": 682.49,
+      "preco_original": 1299.0,
+      "desconto_pct": 47.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_647384-MLA98894718271_112025-AB.webp",
+      "categoria": "automotivo",
+      "score": 87,
+      "enviado_em": "2026-07-01T22:43:56.337877",
+      "link": "https://www.mercadolivre.com.br/cadeira-auto-beb-jovikids-angela-360-isofix-0-a-36kg-preto-e-cinza/p/MLB62337967?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 682.49,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Cadeira Auto Bebê Jovikids 360° Isofix Rosa 0 A 36kg Modelo Angela Conforto Premium",
+      "preco": 682.49,
+      "preco_original": 1299.0,
+      "desconto_pct": 47.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_638139-MLA99409880330_112025-AB.webp",
+      "categoria": "automotivo",
+      "score": 87,
+      "enviado_em": "2026-07-01T22:43:49.410329",
+      "link": "https://www.mercadolivre.com.br/cadeira-auto-beb-jovikids-360-isofix-rosa-0-a-36kg-modelo-angela/p/MLB62665081?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 682.49,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Câmera Veicular Ddpai N2 Dual 2k+1080p App 1,9'' Tela Wifi N2 Dual+sd Card 128g",
+      "preco": 563.96,
+      "preco_original": 1199.0,
+      "desconto_pct": 52.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_903165-MLB110868376322_052026-AB.webp",
+      "categoria": "automotivo",
+      "score": 87,
+      "enviado_em": "2026-07-01T22:43:42.567084",
+      "cupom": "Cupom R$30 OFF",
+      "link": "https://www.mercadolivre.com.br/camera-veicular-ddpai-n2-dual-2k1080p-app-19-tela-wifi/up/MLBU3440773077?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 563.96,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Cosco Kids, Cadeirinha Tour, 9 A 36 Kg, Preto Bronze Liso",
+      "preco": 332.39,
+      "preco_original": 499.0,
+      "desconto_pct": 33.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_968478-MLA100006931015_122025-AB.webp",
+      "categoria": "automotivo",
+      "score": 66,
+      "enviado_em": "2026-07-01T22:43:35.460366",
+      "link": "https://www.mercadolivre.com.br/cosco-kids-cadeirinha-tour-9-a-36-kg-preto-bronze/p/MLB38055542?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 332.39,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Monitor Gamer LG Ultragear 27 Ips, 180hz, 1ms (gtg), Nvidia G-sync , Amd Freesync, Hdr10, Srgb 99% - 27gs60f-b Preto 127/220v",
       "preco": 1088.0,
       "preco_original": 1476.0,
@@ -1038,8 +1099,8 @@
       "enviado_em": "2026-06-29T23:30:35.168195",
       "link": "https://www.mercadolivre.com.br/cadeira-de-carro-infantil-max360-isofix-36kgs-maxi-baby-preto/p/MLB26415897?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "excelente",
-      "menor_preco_30d": 748.9,
-      "menor_periodo": false,
+      "menor_preco_30d": 681.5,
+      "menor_periodo": true,
       "verificada": true
     },
     {
@@ -1559,6 +1620,12 @@
       "desconto_medio": 49,
       "maior_desconto": 60
     },
+    "automotivo": {
+      "total": 8,
+      "score_medio": 81,
+      "desconto_medio": 42,
+      "maior_desconto": 52
+    },
     "eletrodomesticos": {
       "total": 6,
       "score_medio": 78,
@@ -1613,12 +1680,6 @@
       "desconto_medio": 45,
       "maior_desconto": 50
     },
-    "automotivo": {
-      "total": 4,
-      "score_medio": 81,
-      "desconto_medio": 39,
-      "maior_desconto": 42
-    },
     "armazenamento": {
       "total": 4,
       "score_medio": 77,
@@ -1644,6 +1705,6 @@
       "maior_desconto": 55
     }
   },
-  "updated_at": "2026-07-01T21:13:38.563450",
-  "total": 100
+  "updated_at": "2026-07-01T22:46:52.122192",
+  "total": 104
 }
