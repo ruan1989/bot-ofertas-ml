@@ -1,6 +1,68 @@
 {
   "products": [
     {
+      "titulo": "Tênis Masculino Feminino Kappa Park 2.0 Original",
+      "preco": 84.45,
+      "preco_original": 169.0,
+      "desconto_pct": 50.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_636204-MLB92283366432_092025-AB-tnis-masculino-feminino-kappa-park-20-original.webp",
+      "categoria": "esportes",
+      "score": 70,
+      "enviado_em": "2026-07-02T21:19:04.377362",
+      "cupom": "Cupom 5% OFF",
+      "link": "https://produto.mercadolivre.com.br/MLB-4049279695-tnis-masculino-feminino-kappa-park-20-original-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 84.45,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Creatina Monohidratada Pura 500g Dark Lab Unidade Sem Sabor",
+      "preco": 39.9,
+      "preco_original": 129.0,
+      "desconto_pct": 69.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_942122-MLA99923169249_112025-AB.webp",
+      "categoria": "esportes",
+      "score": 63,
+      "enviado_em": "2026-07-02T21:18:57.481150",
+      "cupom": "Cupom R$20 OFF",
+      "link": "https://www.mercadolivre.com.br/creatina-monohidratada-pura-500g-dark-lab-unidade/p/MLB26796581?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "media",
+      "menor_preco_30d": 39.9,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Mesa Dobrável Vira Maleta Com Alça Portátil 1.80m Para Camping Pesca Jardim Área Externa Tft1800 The Black Tools Branco",
+      "preco": 237.4,
+      "preco_original": 423.0,
+      "desconto_pct": 43.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_827202-MLA106099013113_012026-AB.webp",
+      "categoria": "esportes",
+      "score": 79,
+      "enviado_em": "2026-07-02T21:18:50.728191",
+      "link": "https://www.mercadolivre.com.br/mesa-dobravel-vira-maleta-com-alca-portatil-180m-para-camping-pesca-jardim-area-externa-tft1800-the-black-tools/p/MLB65053370?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 237.4,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Tênis Reserva Roma Masculino Casual Cano Baixo Elegante",
+      "preco": 255.99,
+      "preco_original": 399.0,
+      "desconto_pct": 36.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_876206-MLB85157928606_052025-AB-tnis-reserva-roma-masculino-casual-cano-baixo-elegante.webp",
+      "categoria": "esportes",
+      "score": 72,
+      "enviado_em": "2026-07-02T21:18:43.735863",
+      "link": "https://produto.mercadolivre.com.br/MLB-4081278987-tnis-reserva-roma-masculino-casual-cano-baixo-elegante-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 255.99,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Smart Tv H5000f Hd 32 Polegadas 2025 Preto Samsung Bivolt",
       "preco": 967.12,
       "preco_original": 1395.0,
@@ -585,7 +647,7 @@
       "link": "https://www.mercadolivre.com.br/omega-plus-240-caps-dark-lab/p/MLB66597831?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
       "menor_preco_30d": 179.9,
-      "menor_periodo": false,
+      "menor_periodo": true,
       "verificada": true
     },
     {
@@ -1586,6 +1648,12 @@
     "verificada": true
   },
   "stats": {
+    "esportes": {
+      "total": 12,
+      "score_medio": 70,
+      "desconto_medio": 46,
+      "maior_desconto": 75
+    },
     "celulares": {
       "total": 12,
       "score_medio": 86,
@@ -1603,12 +1671,6 @@
       "score_medio": 81,
       "desconto_medio": 47,
       "maior_desconto": 69
-    },
-    "esportes": {
-      "total": 8,
-      "score_medio": 70,
-      "desconto_medio": 44,
-      "maior_desconto": 75
     },
     "eletronicos": {
       "total": 8,
@@ -1683,6 +1745,6 @@
       "maior_desconto": 55
     }
   },
-  "updated_at": "2026-07-02T19:59:28.368838",
-  "total": 104
+  "updated_at": "2026-07-02T21:21:31.305788",
+  "total": 108
 }
