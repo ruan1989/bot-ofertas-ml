@@ -1,6 +1,66 @@
 {
   "products": [
     {
+      "titulo": "Micro-ondas Philco Pmo23eb Limpa Fácil 20 Litros Potência De 1100w Cor Branco 220v",
+      "preco": 445.23,
+      "preco_original": 679.0,
+      "desconto_pct": 34.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_672560-MLA99502210056_112025-AB.webp",
+      "categoria": "eletrodomesticos",
+      "score": 73,
+      "enviado_em": "2026-07-02T12:10:34.903421",
+      "link": "https://www.mercadolivre.com.br/micro-ondas-philco-pmo23eb-limpa-facil-20-litros-potncia-de-1100w-cor-branco/p/MLB17484025?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 445.23,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Micro-ondas 33l Philco Espelhado/branco 1400w 220v Pmo38e",
+      "preco": 549.0,
+      "preco_original": 799.0,
+      "desconto_pct": 31.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_921991-MLA99504374070_112025-AB.webp",
+      "categoria": "eletrodomesticos",
+      "score": 71,
+      "enviado_em": "2026-07-02T12:10:28.174745",
+      "link": "https://www.mercadolivre.com.br/micro-ondas-33l-philco-espelhadobranco-1400w-220v-pmo38e/p/MLB38429792?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 549.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Cooktop 4 Bocas Atlas Agile Up Mesa Vidro Mega Chama Bivolt Preto",
+      "preco": 316.96,
+      "preco_original": 483.0,
+      "desconto_pct": 34.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_662369-MLA99422748970_112025-AB.webp",
+      "categoria": "eletrodomesticos",
+      "score": 70,
+      "enviado_em": "2026-07-02T12:10:21.436728",
+      "link": "https://www.mercadolivre.com.br/cooktop-4-bocas-atlas-agile-up-mesa-vidro-mega-chama-bivolt/p/MLB46671029?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 316.96,
+      "menor_periodo": true,
+      "verificada": true
+    },
+    {
+      "titulo": "Micro-ondas Philco Pmo23eb Limpa Fácil 20l Potência De 1100w Cor Branco 127v",
+      "preco": 445.23,
+      "preco_original": 679.0,
+      "desconto_pct": 34.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_784423-MLA99929513333_112025-AB.webp",
+      "categoria": "eletrodomesticos",
+      "score": 73,
+      "enviado_em": "2026-07-02T12:10:14.669365",
+      "link": "https://www.mercadolivre.com.br/micro-ondas-philco-pmo23eb-limpa-facil-20l-potncia-de-1100w-cor-branco/p/MLB17484024?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 445.23,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Cafeteira Expresso Dolce Gusto Arno Genio S Basic Automática Cinza Escuro 127v",
       "preco": 371.7,
       "preco_original": 679.0,
@@ -1303,6 +1363,12 @@
       "desconto_medio": 47,
       "maior_desconto": 69
     },
+    "eletrodomesticos": {
+      "total": 8,
+      "score_medio": 74,
+      "desconto_medio": 34,
+      "maior_desconto": 41
+    },
     "beleza": {
       "total": 8,
       "score_medio": 85,
@@ -1345,12 +1411,6 @@
       "desconto_medio": 51,
       "maior_desconto": 62
     },
-    "eletrodomesticos": {
-      "total": 4,
-      "score_medio": 76,
-      "desconto_medio": 36,
-      "maior_desconto": 41
-    },
     "automotivo": {
       "total": 4,
       "score_medio": 82,
@@ -1376,6 +1436,6 @@
       "maior_desconto": 55
     }
   },
-  "updated_at": "2026-07-02T06:27:41.659293",
-  "total": 84
+  "updated_at": "2026-07-02T12:13:03.410177",
+  "total": 88
 }
