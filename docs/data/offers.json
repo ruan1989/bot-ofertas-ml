@@ -1,6 +1,66 @@
 {
   "products": [
     {
+      "titulo": "Creatina Monohidratada 250g Growth Supplements - Sem Sabor Em Pó",
+      "preco": 39.9,
+      "preco_original": 64.0,
+      "desconto_pct": 38.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_662415-MLA97812910758_112025-AB.webp",
+      "categoria": "esportes",
+      "score": 69,
+      "enviado_em": "2026-07-02T14:33:08.518742",
+      "link": "https://www.mercadolivre.com.br/creatina-monohidratada-250g-growth-supplements-sem-sabor-em-po/p/MLB19603205?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "boa",
+      "menor_preco_30d": 39.9,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Bicicleta Ergométrica Fitness Para Cardio E Musculação Com Base Cor Preto E Vermelho 6kg Inercia Marca Sevenfit",
+      "preco": 559.99,
+      "preco_original": 1094.0,
+      "desconto_pct": 48.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_679526-MLA100501405537_122025-AB.webp",
+      "categoria": "esportes",
+      "score": 92,
+      "enviado_em": "2026-07-02T14:33:01.870516",
+      "link": "https://www.mercadolivre.com.br/bicicleta-ergometrica-fitness-para-cardio-e-musculaco-com-base-cor-preto-e-vermelho-6kg-inercia-marca-sevenfit/p/MLB42978348?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "excelente",
+      "menor_preco_30d": 559.99,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Creatina Monohidratada 500g Growth Supplements - Sem Sabor Em Pó",
+      "preco": 72.9,
+      "preco_original": 104.0,
+      "desconto_pct": 30.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_602304-MLA109372354737_032026-AB.webp",
+      "categoria": "esportes",
+      "score": 62,
+      "enviado_em": "2026-07-02T14:32:55.179968",
+      "link": "https://www.mercadolivre.com.br/creatina-monohidratada-500g-growth-supplements-sem-sabor-em-po/p/MLB66637233?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "media",
+      "menor_preco_30d": 72.9,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
+      "titulo": "Kit 4 Shorts 2 Em 1 Duplo Dryfit Masculino Compressão Térmic",
+      "preco": 98.0,
+      "preco_original": 142.0,
+      "desconto_pct": 30.0,
+      "foto": "https://http2.mlstatic.com/D_Q_NP_2X_878492-MLB108664426620_032026-AB-kit-4-shorts-2-em-1-duplo-dryfit-masculino-compresso-termic.webp",
+      "categoria": "esportes",
+      "score": 63,
+      "enviado_em": "2026-07-02T14:32:48.484181",
+      "link": "https://produto.mercadolivre.com.br/MLB-6203660830-kit-4-shorts-2-em-1-duplo-dryfit-masculino-compresso-termic-_JM?matt_tool=47114387&matt_source=bot_telegram",
+      "classe": "media",
+      "menor_preco_30d": 98.0,
+      "menor_periodo": false,
+      "verificada": true
+    },
+    {
       "titulo": "Micro-ondas Philco Pmo23eb Limpa Fácil 20 Litros Potência De 1100w Cor Branco 220v",
       "preco": 445.23,
       "preco_original": 679.0,
@@ -496,7 +556,7 @@
       "link": "https://www.mercadolivre.com.br/creatina-1kg-suplemento-monohidratada-em-po-100-pura-soldiers-nutrition/p/MLB18725310?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "boa",
       "menor_preco_30d": 59.9,
-      "menor_periodo": false,
+      "menor_periodo": true,
       "verificada": true
     },
     {
@@ -512,7 +572,7 @@
       "link": "https://www.mercadolivre.com.br/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/p/MLB25929487?matt_tool=47114387&matt_source=bot_telegram",
       "classe": "media",
       "menor_preco_30d": 59.9,
-      "menor_periodo": false,
+      "menor_periodo": true,
       "verificada": true
     },
     {
@@ -1330,17 +1390,17 @@
     }
   ],
   "produto_do_dia": {
-    "titulo": "Perfume Árabe Lattafa Fakhar Gold Extrait Eau De Parfum 100m",
-    "preco": 140.8,
-    "preco_original": 294.0,
-    "desconto_pct": 52.0,
-    "foto": "https://http2.mlstatic.com/D_Q_NP_2X_893268-MLB94221142411_102025-AB.webp",
-    "categoria": "beleza",
-    "score": 91,
-    "enviado_em": "2026-07-02T00:10:03.424473",
-    "link": "https://www.mercadolivre.com.br/perfume-arabe-lattafa-fakhar-gold-extrait-eau-de-parfum-100m/up/MLBU3471073818?matt_tool=47114387&matt_source=bot_telegram",
+    "titulo": "Bicicleta Ergométrica Fitness Para Cardio E Musculação Com Base Cor Preto E Vermelho 6kg Inercia Marca Sevenfit",
+    "preco": 559.99,
+    "preco_original": 1094.0,
+    "desconto_pct": 48.0,
+    "foto": "https://http2.mlstatic.com/D_Q_NP_2X_679526-MLA100501405537_122025-AB.webp",
+    "categoria": "esportes",
+    "score": 92,
+    "enviado_em": "2026-07-02T14:33:01.870516",
+    "link": "https://www.mercadolivre.com.br/bicicleta-ergometrica-fitness-para-cardio-e-musculaco-com-base-cor-preto-e-vermelho-6kg-inercia-marca-sevenfit/p/MLB42978348?matt_tool=47114387&matt_source=bot_telegram",
     "classe": "excelente",
-    "menor_preco_30d": 140.8,
+    "menor_preco_30d": 559.99,
     "menor_periodo": false,
     "verificada": true
   },
@@ -1362,6 +1422,12 @@
       "score_medio": 81,
       "desconto_medio": 47,
       "maior_desconto": 69
+    },
+    "esportes": {
+      "total": 8,
+      "score_medio": 70,
+      "desconto_medio": 44,
+      "maior_desconto": 75
     },
     "eletrodomesticos": {
       "total": 8,
@@ -1399,12 +1465,6 @@
       "desconto_medio": 46,
       "maior_desconto": 59
     },
-    "esportes": {
-      "total": 4,
-      "score_medio": 68,
-      "desconto_medio": 51,
-      "maior_desconto": 75
-    },
     "eletronicos": {
       "total": 4,
       "score_medio": 86,
@@ -1436,6 +1496,6 @@
       "maior_desconto": 55
     }
   },
-  "updated_at": "2026-07-02T12:13:03.410177",
-  "total": 88
+  "updated_at": "2026-07-02T14:34:33.455761",
+  "total": 92
 }
